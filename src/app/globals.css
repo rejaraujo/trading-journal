@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@ a {
 
 main {
   min-height: 100vh;
-  padding: 1rem 0;
+  padding: 1rem ;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -48,4 +48,4 @@ nav a {
   font-weight: bold;
   margin: 0 0.5rem;
   text-decoration: underline;
-}
+} */
