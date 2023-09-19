@@ -15,11 +15,24 @@ export default function appbarDesktop({ matches }) {
 
   return (
     <>
-      <AppbarContainer sx={{ borderBottom: 1, borderBottomColor: "grey.200" }}>
-        <AppbarHeader>
+      <AppbarContainer
+        sx={{
+          borderBottom: 1,
+          borderBottomColor: "grey.200",
+          position: "relative",
+        }}>
+        <AppbarHeader sx={{ position: "absolute", left: "0" }}>
           <Image src={Logo} alt="logo" quality={100} width={180} />
         </AppbarHeader>
-        <MyList type="row">
+        <MyList
+          type="row"
+          sx={{
+            // background: "red",
+            position: "relative",
+            flexGrow: "1",
+            paddingLeft: "15rem",
+            paddingRight: "15rem",
+          }}>
           <MyListItemText secondary="FEATURES" />
           <MyListItemText secondary="PRICING" />
           <MyListItemText secondary="COMMUNITY" />

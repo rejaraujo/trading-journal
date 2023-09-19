@@ -4,7 +4,7 @@ import { Colors } from "../../styles/theme";
 
 export default function Actions() {
   return (
-    <MyList type="row">
+    <MyList type="row" sx={{ position: "absolute", right: "0" }}>
       <ListItemButton
         style={{ backgroundColor: "transparent" }}
         sx={{

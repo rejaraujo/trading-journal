@@ -14,7 +14,7 @@ export const AppbarContainer = styled(Box)(() => ({
 // header
 export const AppbarHeader = styled(Typography)(() => ({
   padding: "6px",
-  flexGrow: 1,
+  // flexGrow: 1,
   // fontSize: "4em",
   // fontFamily: ' "Montez", "cursive" ',
   color: Colors.secondary,
@@ -23,7 +23,7 @@ export const AppbarHeader = styled(Typography)(() => ({
 // myList
 export const MyList = styled(List)(({ type }) => ({
   display: type === "row" ? "flex" : "block",
-  flexGrow: 3,
+  // flexGrow: 3,
   justifyContent: "center",
   alignItems: "center",
 }));
