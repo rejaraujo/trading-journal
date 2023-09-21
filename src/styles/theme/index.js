@@ -1,9 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
-export const DrawerWidth = 250;
+export const DrawerWidth = 500;
 
 export const Colors = {
-  primary: "#5f2c3e",
+  primary: "#022438",
   secondary: "#d1adcc",
   success: "#4CAF50",
   info: "#00a2ff",
@@ -23,7 +23,7 @@ export const Colors = {
   dove_gray: "#d5d5d5",
   body_bg: "#f3f6f9",
   dark_grey: "#3A3B3C",
-  light_grey: "rgb(230,230,230)",
+  light_grey: "#f5f6f7",
   ///////////////
   // Solid Color
   ///////////////
@@ -31,6 +31,8 @@ export const Colors = {
   white_off: "#f5f6f7",
   black: "#000",
   green: "#1EC426",
+  sacramento_green: "#043927",
+  blue_green: "#022438",
 };
 
 const theme = createTheme({
@@ -50,9 +52,28 @@ const theme = createTheme({
         disableElevation: true,
       },
     },
-  },
 
-  //
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          width: 600,
+          height: 600,
+          background: Colors.light_grey,
+          color: Colors.primary,
+          // borderRadius: "0px 100px 0px 0px",
+          borderRight: `1px solid ${Colors.primary}`,
+        },
+      },
+    },
+
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: /* lighten(0.2, Colors.primary)*/ Colors.green,
+        },
+      },
+    },
+  },
 });
 
 export default theme;

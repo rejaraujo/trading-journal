@@ -4,16 +4,27 @@ import { Colors } from "../../styles/theme";
 
 export default function Actions() {
   return (
-    <MyList type="row" sx={{ position: "absolute", right: "0" }}>
+    <MyList type="row" sx={{ position: "absolute", right: "0", pt: 1 }}>
       <ListItemButton
-        style={{ backgroundColor: "transparent" }}
+        variant="contained"
+        disableTouchRipple
         sx={{
           justifyContent: "center",
+          "&.MuiListItemButton-root:hover": {
+            color: Colors.green,
+            background: "transparent",
+            m: "4px",
+          },
         }}>
         <ListItem
           sx={{
             display: "flex",
             justifyContent: "center",
+            fontWeight: "bold",
+            // color: Colors.white_off,
+            // background: Colors.green,
+            borderRadius: "4px",
+            letterSpacing: "0.64px",
             fontWeight: "bold",
           }}>
           LOG IN
@@ -21,16 +32,20 @@ export default function Actions() {
       </ListItemButton>
 
       <ListItemButton
-        style={{ backgroundColor: "transparent" }}
+        variant="contained"
+        disableTouchRipple
         sx={{
           justifyContent: "center",
+          "&.MuiListItemButton-root:hover": {
+            color: Colors.white_off,
+            background: "transparent",
+          },
         }}>
         <ListItem
           sx={{
             display: "flex",
             justifyContent: "center",
             fontWeight: "bold",
-            color: Colors.white_off,
             background: Colors.green,
             borderRadius: "4px",
             letterSpacing: "0.64px",

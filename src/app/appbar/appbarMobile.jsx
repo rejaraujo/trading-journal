@@ -12,24 +12,23 @@ export default function AppbarMobile({ matches }) {
         borderBottom: 1,
         borderBottomColor: "grey.200",
         position: "relative",
+        pb: 7,
       }}>
-      <AppbarHeader sx={{ position: "absolute", left: "0" }}>
+      <AppbarHeader sx={{ position: "absolute", left: "0", pt: 4, ml: 4 }}>
         <Image src={Logo} alt="logo" quality={100} width={180} />
       </AppbarHeader>
       <IconButton
         style={{ backgroundColor: "transparent" }}
         size="large"
-        edge="start"
-        color="inherit"
         aria-label="open drawer"
-        sx={{ position: "absolute", right: "0" }}>
+        sx={{ position: "absolute", right: 25, pt: 4 }}>
         <MenuIcon
           fontSize="large"
           sx={{
-            backgroundColor: "black",
+            backgroundColor: Colors.sacramento_green,
             color: Colors.white_off,
-            borderRadius: "3px",
-            padding: "3px",
+            borderRadius: "4px",
+            p: "8px",
           }}
         />
       </IconButton>

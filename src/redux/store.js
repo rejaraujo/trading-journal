@@ -1,10 +1,10 @@
 "use client";
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-// import the slices.
+import drawerSlice from "../redux/features/drawer/drawerSlice";
 
 const rootReducer = combineReducers({
-  //add all your reducers here
+  drawer: drawerSlice,
 });
 
 export const store = configureStore({

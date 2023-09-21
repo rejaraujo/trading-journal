@@ -1,6 +1,5 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-import AppbarMobile from "./appbarMobile";
-import AppbarDesktop from "./appbarDesktop";
+import { AppbarMobile, AppbarDesktop } from "..";
 
 export default function Appbar() {
   const theme = useTheme();

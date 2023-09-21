@@ -1,3 +1,9 @@
+export { default as AppbarDesktop } from "./appbar/appbarDesktop";
+export { default as AppbarMobile } from "./appbar/appbarMobile";
 export { default as Actions } from "./appbar/actions";
 export { default as Appbar } from "./appbar/page";
 export { default as HomePage } from "./homePage/page";
+export { default as SessionOne } from "./homePage/sessionOne";
+export { default as SessionTwo } from "./homePage/sessiontwo";
+export { default as Footer } from "./homePage/footer";
+export { default as AppDrawer } from "./appdrawer/appDrawer.jsx";

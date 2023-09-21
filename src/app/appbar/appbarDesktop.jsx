@@ -17,11 +17,12 @@ export default function appbarDesktop({ matches }) {
     <>
       <AppbarContainer
         sx={{
+          pb: 4,
           borderBottom: 1,
           borderBottomColor: "grey.200",
           position: "relative",
         }}>
-        <AppbarHeader sx={{ position: "absolute", left: "0" }}>
+        <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}>
           <Image src={Logo} alt="logo" quality={100} width={180} />
         </AppbarHeader>
         <MyList
@@ -32,6 +33,7 @@ export default function appbarDesktop({ matches }) {
             flexGrow: "1",
             paddingLeft: "15rem",
             paddingRight: "15rem",
+            pt: 1,
           }}>
           <MyListItemText secondary="FEATURES" />
           <MyListItemText secondary="PRICING" />
