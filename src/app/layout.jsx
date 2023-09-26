@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { ReduxProvider } from "@/redux/provider";
+import { ReduxProvider } from "../redux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head></head>
+      {/* <head></head> */}
       <body className={inter.className}>
         {/* import the custom provider component */}
         <ReduxProvider>{children}</ReduxProvider>

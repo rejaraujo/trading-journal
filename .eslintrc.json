@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+  // retrieved from: https://stackoverflow.com/questions/69061240/nextjs-importing-next-document-outside-of-pages-document-error
+  "rules": {
+    //"react/no-unescaped-entities": "off",
+    "@next/next/no-document-import-in-page": "off" // to fix the issue withh import Document in .eslintrc.json file.
+  }
 }

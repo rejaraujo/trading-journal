@@ -6,4 +6,4 @@ export { default as HomePage } from "./homePage/page";
 export { default as SessionOne } from "./homePage/sessionOne";
 export { default as SessionTwo } from "./homePage/sessiontwo";
 export { default as Footer } from "./homePage/footer";
-export { default as AppDrawer } from "./appdrawer/appDrawer.jsx";
+export { default as AppDrawer } from "./drawer/appDrawer";

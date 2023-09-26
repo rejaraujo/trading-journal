@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const DrawerWidth = 500;
+export const DrawerWidth = 300;
 
 export const Colors = {
   primary: "#022438",
@@ -56,12 +56,12 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          width: 600,
-          height: 600,
+          width: DrawerWidth,
+          // height: 600,
           background: Colors.light_grey,
           color: Colors.primary,
-          // borderRadius: "0px 100px 0px 0px",
-          borderRight: `1px solid ${Colors.primary}`,
+          borderRadius: "0px 100px 0px 0px",
+          borderRight: `10px solid ${Colors.blue_green}`,
         },
       },
     },

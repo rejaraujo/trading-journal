@@ -1,31 +1,31 @@
-import {
-  Divider,
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  styled,
-} from "@mui/material";
-import { Colors } from "../../styles/theme";
-import { Actions } from "..";
-// import {useAppDispatch} from "../../redux/hooks";
-// import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
+"use client";
 
-const MiddleDivider = styled((props) => (
-  <Divider variant="middle" {...props} />
-))``;
+import { Drawer, List, ListItemButton, ListItemText, Box } from "@mui/material";
+
+import { DrawerCloseButton } from "@/styles/drawer";
+import CloseIcon from "@mui/icons-material/Close";
+import { useSelector, useDispatch } from "react-redux";
+import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
+import { Actions } from "..";
 
 export default function AppDrawer() {
-  // const dispatch = useAppDispatch();
-
-  // const handleDrawerOpen = (e, value) => {
-  //   WidthNormalTwoTone.scrollTo(0,0);
-  //   dispatch(setDrawerOpen(value));
-  // }
+  const { drawerOpen } = useSelector((state) => state.drawerOpen);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <Drawer open={false}>
+      {drawerOpen && (
+        <DrawerCloseButton onClick={() => dispatch(setDrawerOpen(false))}>
+          <CloseIcon
+            sx={{
+              fontSize: "2rem",
+              // background: "red",
+            }}
+          />
+        </DrawerCloseButton>
+      )}
+      {/*  */}
+      <Drawer open={drawerOpen}>
         <List>
           <ListItemButton>
             <ListItemText>FEATURES</ListItemText>
@@ -38,10 +38,6 @@ export default function AppDrawer() {
           </ListItemButton>
           <ListItemButton>
             <ListItemText>Sharing Features</ListItemText>
-          </ListItemButton>
-          <MiddleDivider />
-          <ListItemButton>
-            <ListItemText>PRICING</ListItemText>
           </ListItemButton>
           <ListItemButton>
             <ListItemText>PRICING</ListItemText>

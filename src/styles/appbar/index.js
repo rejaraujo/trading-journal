@@ -1,5 +1,11 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography, List, ListItemText } from "@mui/material";
+import {
+  Box,
+  Typography,
+  List,
+  ListItemText,
+  ListItemButton,
+} from "@mui/material";
 import { Colors } from "../theme";
 
 //container
@@ -14,7 +20,7 @@ export const AppbarContainer = styled(Box)(() => ({
 // header
 export const AppbarHeader = styled(Typography)(() => ({
   padding: "6px",
-  // flexGrow: 1,
+  flexGrow: 1,
   // fontSize: "4em",
   // fontFamily: ' "Montez", "cursive" ',
   color: Colors.secondary,
@@ -23,14 +29,32 @@ export const AppbarHeader = styled(Typography)(() => ({
 // myList
 export const MyList = styled(List)(({ type }) => ({
   display: type === "row" ? "flex" : "block",
-  // flexGrow: 3,
+  flexGrow: 3,
   justifyContent: "center",
   alignItems: "center",
 }));
 
+// export const NavListItemButton = styled(ListItemButton)(()=> ({
+// justifyContent: "center",
+// "&:hover": {
+//   color: Colors.green,
+//   background: "transparent",
+//   m: "4px",
+// },
+// })
+
+export const NavListItemButton = styled(ListItemButton)(() => ({
+  justifyContent: "center",
+  "&:hover": {
+    color: Colors.green,
+  },
+}));
+
 export const MyListItemText = styled(ListItemText)(() => ({
-  // color: Colors.dark,
-  fontWeight: "bolder",
+  color: Colors.dim_grey,
+  "&:hover": {
+    color: Colors.green,
+  },
 }));
 
 // export const ActionconsContainerMobile = styled(Box)(() => ({

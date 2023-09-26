@@ -7,7 +7,7 @@ export const drawerSlice = createSlice({
   },
   reducers: {
     setDrawerOpen: (state, action) => {
-      state.page = action.payload;
+      state.drawerOpen = action.payload;
     },
   },
 });

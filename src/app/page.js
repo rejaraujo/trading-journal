@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { Appbar, HomePage, AppDrawer } from "../app";
+import { AppDrawer, Appbar, HomePage } from "../app";
 import { ThemeProvider } from "@mui/system";
 import theme from "@/styles/theme";
-
-export default function Home() {
-  // title the page
-
+export default function App() {
+  //title the page
   useEffect(() => {
     document.title = "Trading Journal - HomePage";
   }, []);
