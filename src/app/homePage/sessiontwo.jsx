@@ -26,8 +26,7 @@ export default function SessionTwo() {
             lg={4}
             display="flex"
             flexDirection={"column"}
-            // sx={{ background: "pink" }}
-          >
+            sx={{ background: "pink" }}>
             <BannerList>
               <ListItem alignItems="flex-start">
                 <BannerHeader>

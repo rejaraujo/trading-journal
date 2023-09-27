@@ -28,7 +28,7 @@ export default function AppbarMobile({ matches }) {
         <MenuIcon
           fontSize="large"
           sx={{
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.blue_green,
             color: Colors.white_off,
             borderRadius: "4px",
             p: "7px",
