@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "../../styles/theme";
+import Link from "next/link";
 
 export default function AppbarMobile({ matches }) {
   const dispatch = useDispatch();
@@ -16,28 +17,30 @@ export default function AppbarMobile({ matches }) {
       sx={{
         borderBottom: 1,
         borderBottomColor: "grey.200",
-        position: "relative",
-        pb: 7,
+        padding: "0rem 2rem 0rem 0rem ",
       }}>
-      <IconButton
-        onClick={() => dispatch(setDrawerOpen(true))}
-        style={{ backgroundColor: "transparent" }}
-        size="large"
-        aria-label="open drawer"
-        sx={{ position: "absolute", left: 25, pt: 4.5 }}>
-        <MenuIcon
-          fontSize="large"
-          sx={{
-            backgroundColor: Colors.blue_green,
-            color: Colors.white_off,
-            borderRadius: "4px",
-            p: "7px",
-          }}
-        />
-      </IconButton>
-      <AppbarHeader sx={{ position: "absolute", right: 25, pt: 5, ml: 4 }}>
-        <Image src={Logo} alt="logo" quality={100} width={180} />
+      <AppbarHeader>
+        {/*  */}
+        <IconButton
+          onClick={() => dispatch(setDrawerOpen(true))}
+          style={{ backgroundColor: "transparent" }}
+          size="large"
+          aria-label="open drawer">
+          <MenuIcon
+            fontSize="large"
+            sx={{
+              backgroundColor: Colors.blue_green,
+              color: Colors.white_off,
+              borderRadius: "4px",
+              p: "7px",
+            }}
+          />
+        </IconButton>
       </AppbarHeader>
+
+      <Link href="/">
+        <Image src={Logo} alt="logo" quality={100} width={180} />
+      </Link>
     </AppbarContainer>
   );
 }

@@ -2,10 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import drawerReducer from "./features/drawer/drawerSlice";
+import anchorElReducer from "./features/anchorEl/anchorSlice";
 
 export const store = configureStore({
   reducer: {
     drawerOpen: drawerReducer,
+    anchorEl: anchorElReducer,
   },
 });
 

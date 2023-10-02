@@ -4,53 +4,67 @@ import {
   MyList,
   MyListItemText,
 } from "@/styles/appbar";
-import { ListItem, ListItemButton } from "@mui/material";
+import { Menu, MenuItem, ListItem, ListItemButton } from "@mui/material";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
 
 export default function AppbarDesktop({ matches }) {
-  // const component = matches ? ActionIconsContainerMobile : ActionsIconsContainerDesktop
+  const { anchorEl } = useAppSelector((state) => state.anchorEl);
+  const dispatch = useAppDispatch();
 
+  const handleClick = (event) => {
+    dispatch(setAnchorEl(event.currentTarget));
+  };
+
+  const handleClose = () => {
+    dispatch(setAnchorEl(null));
+  };
+
+  const open = Boolean(anchorEl);
   return (
     <>
       <AppbarContainer
         sx={{
-          pb: 4,
           borderBottom: 1,
-          borderBottomColor: "grey.200",
-          position: "relative",
+          borderBottomColor: Colors.dove_gray,
         }}>
-        <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}>
-          <Image src={Logo} alt="logo" quality={100} width={180} />
+        {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
+        <AppbarHeader>
+          <Link href="/">
+            <Image src={Logo} alt="logo" quality={100} width={180} />
+          </Link>
         </AppbarHeader>
-        <MyList
-          type="row"
-          sx={{
-            // background: "red",
-            position: "relative",
-            flexGrow: "1",
-            paddingLeft: "17rem",
-            paddingRight: "12rem",
-            pt: 1.4,
-          }}>
-          {/* <Link></Link> */}
-          <MyListItemText>
-            <Link
-              className="navLink"
-              href="/features"
-              style={
-                {
-                  // textDecoration: "none",
-                  // textTransform: "none",
-                  // fontSize: "16px",
-                  // color: "#1ec426",
-                }
-              }>
-              FEATURES
-            </Link>
+        <MyList type="row">
+          <MyListItemText
+            id="features-item"
+            onClick={handleClick}
+            aria-controls={open ? "features-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? true : undefined}>
+            FEATURES
           </MyListItemText>
+          {/* Dropdown Menu */}
+          <Menu
+            id="features-menu"
+            anchorEl={anchorEl}
+            open={open}
+            MenuListProps={{ "aria-labelledby": "features-items" }}
+            onClose={handleClose}>
+            <MenuItem onClick={handleClose}>
+              <Link href="/journal-features">Journal Features</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link href="/analytical-features">Analytical Features</Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              {" "}
+              <Link href="/sharing-features">Sharing Featuress</Link>
+            </MenuItem>
+          </Menu>
           <MyListItemText>
             <Link href="/pricing">PRICING</Link>
           </MyListItemText>
@@ -60,10 +74,7 @@ export default function AppbarDesktop({ matches }) {
           <MyListItemText>
             <Link href="/help">HELP</Link>
           </MyListItemText>
-          {/* <MyListItemText secondary="FEATURES" /> */}
-          {/* <MyListItemText secondary="PRICING" /> */}
-        </MyList>
-        <MyList type="row" sx={{ position: "absolute", right: "0", pt: 1 }}>
+          {/* LOGIN IN */}
           <ListItemButton
             variant="contained"
             disableTouchRipple
@@ -72,7 +83,6 @@ export default function AppbarDesktop({ matches }) {
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
-                m: "4px",
               },
             }}>
             <ListItem
@@ -84,9 +94,10 @@ export default function AppbarDesktop({ matches }) {
                 letterSpacing: "0.64px",
                 fontWeight: "bold",
               }}>
-              <Link href="/log-in">LOG IN</Link>
+              LOG IN
             </ListItem>
           </ListItemButton>
+          {/* SIGN UP */}
           <ListItemButton
             variant="contained"
             disableTouchRipple

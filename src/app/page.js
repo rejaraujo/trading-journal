@@ -11,8 +11,11 @@ export default function App() {
   }, []);
   return (
     <ThemeProvider theme={theme}>
+      {/* Navbar page component*/}
       <Appbar />
+      {/*MainGrid  & Footer page components*/}
       <HomePage />
+      {/* Mobile Menu */}
       <AppDrawer />
     </ThemeProvider>
   );

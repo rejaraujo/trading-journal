@@ -1,11 +1,13 @@
-import { SessionOne, SessionTwo, Footer } from "..";
+import { MainGrid, Articles, Footer } from "..";
 
 export default function HomePage() {
   return (
     <>
-      <SessionOne />
-      <SessionTwo />
+      <MainGrid />
+      {/* <Articles />*/}
       <Footer />
     </>
   );
 }
+
+// localhost3000 route shouws this content
