@@ -1,4 +1,5 @@
-1. fix the fonts
+<!-- 1. fix the fonts -->
+
 2. repeat the header for every page
 3. fix the image next.js component props.
 4. maybe change all items in the nabar for buttons

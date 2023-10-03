@@ -35,19 +35,36 @@ export default function AppbarDesktop({ matches }) {
         {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
         <AppbarHeader>
           <Link href="/">
-            <Image src={Logo} alt="logo" quality={100} width={180} />
+            <Image src={Logo} alt="logo" quality={100} width={190} />
           </Link>
         </AppbarHeader>
-        <MyList type="row">
-          <MyListItemText
-            id="features-item"
-            onClick={handleClick}
-            aria-controls={open ? "features-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? true : undefined}>
-            FEATURES
-          </MyListItemText>
-          {/* Dropdown Menu */}
+        <MyList type="row" sx={{}}>
+          <ListItemButton
+            variant="contained"
+            disableTouchRipple
+            sx={{
+              // justifyContent: "center",
+              color: Colors.dim_grey,
+              "&.MuiListItemButton-root:hover": {
+                color: Colors.green,
+                background: "transparent",
+              },
+            }}>
+            <Link
+              href=""
+              id="features-item"
+              onClick={handleClick}
+              aria-controls={open ? "features-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? true : undefined}
+              style={{
+                fontSize: "15px",
+                letterSpacing: "0.64px",
+              }}>
+              FEATURES
+            </Link>
+          </ListItemButton>
+
           <Menu
             id="features-menu"
             anchorEl={anchorEl}
@@ -65,62 +82,126 @@ export default function AppbarDesktop({ matches }) {
               <Link href="/sharing-features">Sharing Featuress</Link>
             </MenuItem>
           </Menu>
-          <MyListItemText>
-            <Link href="/pricing">PRICING</Link>
-          </MyListItemText>
-          <MyListItemText>
-            <Link href="/community">COMMUNITY</Link>
-          </MyListItemText>
-          <MyListItemText>
-            <Link href="/help">HELP</Link>
-          </MyListItemText>
-          {/* LOGIN IN */}
           <ListItemButton
             variant="contained"
             disableTouchRipple
             sx={{
-              justifyContent: "center",
+              // justifyContent: "center",
+              color: Colors.dim_grey,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
               },
             }}>
-            <ListItem
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                fontWeight: "bold",
-                borderRadius: "4px",
+            <Link
+              href="/pricing"
+              style={{
+                fontSize: "15px",
                 letterSpacing: "0.64px",
-                fontWeight: "bold",
+                margin: 0,
               }}>
-              LOG IN
-            </ListItem>
+              PRICING
+            </Link>
           </ListItemButton>
-          {/* SIGN UP */}
           <ListItemButton
             variant="contained"
             disableTouchRipple
             sx={{
-              justifyContent: "center",
+              // justifyContent: "center",
+              color: Colors.dim_grey,
               "&.MuiListItemButton-root:hover": {
-                color: Colors.white_off,
+                color: Colors.green,
                 background: "transparent",
               },
             }}>
-            <ListItem
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                fontWeight: "bold",
-                background: Colors.green,
-                borderRadius: "4px",
+            <Link
+              href="/community"
+              style={{
+                fontSize: "15px",
                 letterSpacing: "0.64px",
-                fontWeight: "bold",
+                margin: 0,
               }}>
-              SIGN UP
-            </ListItem>
+              COMMUNITY
+            </Link>
           </ListItemButton>
+          <ListItemButton
+            variant="contained"
+            disableTouchRipple
+            sx={{
+              // justifyContent: "center",
+              color: Colors.dim_grey,
+              "&.MuiListItemButton-root:hover": {
+                color: Colors.green,
+                background: "transparent",
+              },
+            }}>
+            <Link
+              href="/help"
+              style={{
+                fontSize: "15px",
+                letterSpacing: "0.64px",
+                margin: 0,
+              }}>
+              HELP
+            </Link>
+          </ListItemButton>
+
+          {/* LOGIN IN */}
+          <MyList type="row" sx={{ flexGrow: "0" }}>
+            <ListItemButton
+              variant="contained"
+              disableTouchRipple
+              sx={{
+                justifyContent: "center",
+                "&.MuiListItemButton-root:hover": {
+                  color: Colors.green,
+                  background: "transparent",
+                },
+              }}>
+              <Link
+                href="/login"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  fontWeight: "bold",
+                  borderRadius: "4px",
+                  letterSpacing: "0.64px",
+                  fontSize: "15px",
+                }}>
+                LOG IN
+              </Link>
+            </ListItemButton>
+            {/* SIGN UP */}
+            <ListItemButton
+              variant="contained"
+              disableTouchRipple
+              sx={{
+                justifyContent: "center",
+                "&.MuiListItemButton-root:hover": {
+                  color: Colors.white_off,
+                  background: "transparent",
+                },
+              }}>
+              <Link
+                href="/signin"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  fontWeight: "bold",
+                  background: Colors.green,
+                  borderRadius: "4px",
+                  letterSpacing: "0.64px",
+                  fontWeight: "bold",
+                  padding: "16px 48px",
+                  fontSize: "15px",
+                  // "@media (max-width: 600px)": {
+                  //   padding: "0px",
+                  // },
+                }}>
+                SIGN UP
+              </Link>
+            </ListItemButton>
+          </MyList>
         </MyList>
       </AppbarContainer>
     </>

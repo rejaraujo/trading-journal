@@ -1,13 +1,5 @@
-import {
-  Box,
-  Grid,
-  Typography,
-  List,
-  ListItemText,
-  Stack,
-  Button,
-} from "@mui/material";
-import { FooterTitle } from "../../styles/footer";
+import { Box, Grid, List, ListItemText, Stack, Button } from "@mui/material";
+import { FooterTitle, FooterText } from "../../styles/footer";
 import { Colors } from "../../styles/theme";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -34,7 +26,7 @@ export default function Footer() {
       }}>
       <Grid item container spacing={2} justifyContent="center" lg={12}>
         <Grid item md={6} lg={4}>
-          <FooterTitle variant="body1">
+          <FooterTitle>
             <Link href="/">
               <Image
                 src={LogoFooter}
@@ -47,83 +39,86 @@ export default function Footer() {
               />
             </Link>
           </FooterTitle>
-          <FooterTitle variant="body1" pb={2}>
-            Simple. Fast. Powerful
-          </FooterTitle>
-          <Typography lineHeight={2} variant="caption2">
+          <FooterTitle pb={2}>Simple. Fast. Powerful</FooterTitle>
+          <FooterText
+            lineHeight={2}
+            // variant="caption2"
+            sx={{
+              fontFamily: "__Work_Sans_aef32b",
+            }}>
             The trading journal that will help improve your trading performance.
-          </Typography>
+          </FooterText>
           <Stack pt={1}>
             <Button
-              sx={{ mt: 4, mb: 4, background: Colors.green, mr: 3 }} // check this
+              sx={{
+                mt: 4,
+                mb: 4,
+                background: Colors.green,
+                mr: 3,
+                fontFamily: "__Work_Sans_aef32b",
+              }} // check this
               variant="contained">
               Sign In
             </Button>
           </Stack>
         </Grid>
         <Grid item md={6} lg={2}>
-          <FooterTitle variant="body1" pt={{ xs: 1, md: 2 }}>
-            company
-          </FooterTitle>
+          <FooterTitle pt={{ xs: 1, md: 2 }}>company</FooterTitle>
           <List>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/about-us">About Us</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/terms-of-service"> Terms of Service</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/privacy-policy"> Privacy &amp; Policy</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/affiliates"> Affiliates</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/academy">Academy</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/careers">Careers</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
           </List>
         </Grid>
         <Grid item md={6} lg={2}>
-          <FooterTitle variant="body1" pt={{ xs: 1, md: 2 }}>
-            connect
-          </FooterTitle>
+          <FooterTitle pt={{ xs: 1, md: 2 }}>connect</FooterTitle>
           <List>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/contactus"> Contact Us</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/platforms"> Platforms</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
             <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
+              <FooterText>
                 <Link href="/help"> Help</Link>
-              </Typography>
+              </FooterText>
             </ListItemText>
           </List>
         </Grid>
         <Grid item md={6} lg={4}>
-          <FooterTitle variant="body1" pt={{ xs: 1, md: 2 }}>
-            Follow
-          </FooterTitle>
+          <FooterTitle pt={{ xs: 1, md: 2 }}>Follow</FooterTitle>
           <Box
             sx={{
               mt: 4,
@@ -143,9 +138,9 @@ export default function Footer() {
           </Box>
         </Grid>
       </Grid>
-      <Typography variant="body2" pt={4} pb={4}>
+      <FooterText pt={4} pb={4}>
         © 2023 SureSwift Capital, Inc., All Rights Reserved
-      </Typography>
+      </FooterText>
     </Grid>
   );
 }

@@ -23,7 +23,7 @@ export default function AppbarMobile({ matches }) {
         {/*  */}
         <IconButton
           onClick={() => dispatch(setDrawerOpen(true))}
-          style={{ backgroundColor: "transparent" }}
+          style={{ backgroundColor: "transparent", padding: "1.6rem" }}
           size="large"
           aria-label="open drawer">
           <MenuIcon

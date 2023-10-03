@@ -9,8 +9,14 @@ export const MyBox = styled(Box)(({ theme }) => ({
   height: "100%",
   padding: "26.8px 115px",
   margin: "0rem 1rem 0rem 1rem",
-  background: Colors.dove_gray,
+  background: "#f5f6f7",
   borderRadius: "4px",
+  textAlign: "center",
+  fontSize: "20px",
+  color: "#022438",
+  lineHeight: "28px",
+  letterSpacing: "0.32px",
+
   [theme.breakpoints.down("md")]: {
     margin: "0rem 4rem 0rem 4rem",
     padding: "28.8px 14px",
@@ -24,27 +30,23 @@ export const MyBox = styled(Box)(({ theme }) => ({
 
 export const MessageText = styled(Typography)(({ theme }) => ({
   textAlign: "left",
+  // fontFamily: "__Work_Sans_aef32b",
   fontSize: "42px",
-  lineHeight: "54px",
+  lineHeight: "56px",
   fontWeight: "bold",
-  paddingBottom: "2rem",
-  marginTop: "2rem",
+  marginTop: 0,
+  marginBottom: "0.5rem",
+  marginBlockStart: "0.83em",
+  marginBlockEnd: "0.83em",
   color: Colors.dark,
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "34px",
-    lineHeight: "44px",
-  },
+  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
     paddingLeft: "4rem",
-    // paddingRight: "4rem",
   },
   [theme.breakpoints.down("sm")]: {
-    // fontSize: "30px",
-    // lineHeight: "40px",
+    paddingLeft: "0.7rem",
     fontSize: "30px",
-    lineHeight: "44px",
-    paddingLeft: "0rem",
-    paddingRight: "0rem",
+    lineHeight: "40px",
   },
 }));
 
@@ -53,17 +55,15 @@ export const Testimonial = styled(Typography)(({ theme }) => ({
   textAlign: "left",
   fontSize: "22px",
   paddingBottom: "2rem",
-  // fontFamily: "sans-serif",
+  fontFamily: "__Work_Sans_aef32b",
   color: Colors.dark,
   [theme.breakpoints.down("md")]: {
-    // paddingRight: "4rem",
-
     paddingLeft: "4rem",
     paddingRight: "4rem",
   },
 
   [theme.breakpoints.down("sm")]: {
-    paddingLeft: "0rem",
+    paddingLeft: "0.7rem",
     paddingRight: "0rem",
     fontSize: "20px",
   },
@@ -71,6 +71,7 @@ export const Testimonial = styled(Typography)(({ theme }) => ({
 
 // SignUp Now Button
 export const MyButton = styled(Button)(({ theme }) => ({
+  fontFamily: "__Work_Sans_aef32b",
   fontSize: "20px",
   lineHeight: "20px",
   padding: "26.8px 115px",
@@ -99,6 +100,7 @@ export const MyButton = styled(Button)(({ theme }) => ({
 // 3 columns Banner news.
 export const BannerHeader = styled(Typography)(() => ({
   color: Colors.secondary,
+  // fontSize: "32px",
 }));
 
 export const BannerList = styled(List)(({ type, theme }) => ({
@@ -114,20 +116,28 @@ export const BannerList = styled(List)(({ type, theme }) => ({
 
 export const BannerTitle = styled(Typography)(({ theme }) => ({
   textAlign: "left",
-  fontSize: "24px",
-  fontWeight: "bold",
-  // fontFamily: "sans-serif",
-  color: Colors.dark,
+  fontFamily: "sans-serif",
+  fontSize: "32px",
+  lineHeight: "40px",
+  letterSpacing: "4px",
+  margin: 0,
+  fontWeight: 600,
+  color: "#222",
   paddingBottom: "1rem",
 }));
 
 // BannerText
 export const BannerText = styled(Typography)(({ theme }) => ({
-  // fontFamily: "sans-serif",
-  color: Colors.primary,
-  display: "flex",
   fontSize: "20px",
-  textAlign: "left",
+  lineHeight: "28px",
+  letterSpacing: "0,32px",
+  color: "#222",
+  margin: " 0 0 10px",
+  marginBlockStart: "1em",
+  marginBlockEnd: "1em",
+  marginInlineStart: "0em",
+  marginInlineEnd: "0em",
+  fontFamily: "__Work_Sans_aef32b",
 }));
 
 // export const BannerImage = styled("img")(({ src, theme }) => ({

@@ -50,7 +50,7 @@ input, textarea {
   text-decoration: underline;
 }  */
 
- root {
+ /* root {
   --HSDSGlobalFontFamily: "Aktiv Grotesk","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --HSDSGlobalFontFamilySystem: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --HSDSGlobalFontFamilyMono: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
@@ -126,4 +126,4 @@ input, textarea {
   --bs-link-color: #0d6efd;
   --bs-link-hover-color: #0a58ca;
   --bs-code-color: #d63384;
-  --bs-highlight-bg: #fff3cd; }
+  --bs-highlight-bg: #fff3cd; } */

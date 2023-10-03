@@ -1,11 +1,12 @@
 import "./globals.css";
 import { Work_Sans } from "@next/font/google";
 import { ReduxProvider } from "../redux/provider";
+import { ThemeRegistry } from "@/theme/themeRegistry";
 
 // instantiate the Work_Sans object by providing the subsets.
 const workSans = Work_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  // weight: ["400", "700"],
 });
 export const metadata = {
   title: "Create Next App",
@@ -16,15 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       {/* <head></head> */}
+      {/* <ThemeRegistry> */}
       <body className={workSans.className}>
         {/* import the custom provider component */}
-        <ReduxProvider>
-          {/* <nav>
-            <h1>REJAINE</h1>
-          </nav> */}
-          {children}
-        </ReduxProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
+      {/* </ThemeRegistry> */}
     </html>
   );
 }

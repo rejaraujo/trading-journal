@@ -23,15 +23,7 @@ export default function Articles() {
         pt={"4rem"}
         // sx={{ background: "blue", ml: "3rem" }}
       >
-        <Grid
-          item
-          container
-          lg={12}
-          display="flex"
-          spacing={2}
-          sx={{
-            background: "yellow",
-          }}>
+        <Grid item container lg={12} display="flex" spacing={2}>
           <Grid
             item
             xs={12}

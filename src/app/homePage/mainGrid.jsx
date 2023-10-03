@@ -104,20 +104,13 @@ export default function MainGrid() {
             lg={12}
             display="flex"
             flexDirection={"row"}
-            sx={{ marginTop: "4rem" }}>
+            sx={{ marginTop: "2rem" }}>
             <MyBox>
-              <Typography
-                variant="p"
-                sx={{
-                  fontSize: "20px",
-                }}>
+              <Typography variant="p">
                 Trade with a firm? Take a look at{" "}
                 <Link
                   href="/trading-firms"
                   style={{
-                    textDecoration: "none",
-                    textTransform: "none",
-                    fontSize: "20px",
                     color: Colors.green,
                   }}>
                   Tradervue for trading firms.
