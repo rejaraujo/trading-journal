@@ -1,9 +1,7 @@
-export { default as AppbarDesktop } from "./appbar/appbarDesktop";
-export { default as AppbarMobile } from "./appbar/appbarMobile";
-export { default as Actions } from "./appbar/actions";
-export { default as Appbar } from "./appbar/page";
-export { default as HomePage } from "./homePage/page";
-export { default as MainGrid } from "./homePage/mainGrid";
-export { default as Articles } from "./homePage/articles";
-export { default as Footer } from "./homePage/footer";
-export { default as AppDrawer } from "./drawer/appDrawer";
+export { default as AppbarDesktop } from "../_components/appbar/appbarDesktop";
+export { default as AppbarMobile } from "../_components/appbar/appbarMobile";
+export { default as NavBar } from "../_components/appbar/navbar";
+export { default as Actions } from "../_components/appbar/actions";
+export { default as HomePage } from "../_components/homePage/homePage";
+export { default as Footer } from "../_components/footer/footer";
+export { default as AppDrawer } from "../_components/drawer/appDrawer";

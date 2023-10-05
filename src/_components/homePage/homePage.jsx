@@ -1,3 +1,5 @@
+"use client";
+
 import Grid from "@mui/material/Grid";
 import {
   MyBox,
@@ -18,7 +20,7 @@ import Share from "../../../public/images/share.jpg";
 import Link from "next/link";
 import { Colors } from "@/styles/theme";
 
-export default function MainGrid() {
+export default function HomePage() {
   return (
     <>
       <Grid

@@ -1,3 +1,5 @@
+"use client";
+
 import { styled } from "@mui/system";
 import { Box, Typography, List, Button } from "@mui/material";
 import { Colors } from "../theme";
@@ -9,11 +11,11 @@ export const MyBox = styled(Box)(({ theme }) => ({
   height: "100%",
   padding: "26.8px 115px",
   margin: "0rem 1rem 0rem 1rem",
-  background: "#f5f6f7",
+  background: Colors.light_grey,
   borderRadius: "4px",
   textAlign: "center",
   fontSize: "20px",
-  color: "#022438",
+  color: Colors.secondary,
   lineHeight: "28px",
   letterSpacing: "0.32px",
 
@@ -71,7 +73,6 @@ export const Testimonial = styled(Typography)(({ theme }) => ({
 
 // SignUp Now Button
 export const MyButton = styled(Button)(({ theme }) => ({
-  fontFamily: "__Work_Sans_aef32b",
   fontSize: "20px",
   lineHeight: "20px",
   padding: "26.8px 115px",
@@ -81,7 +82,7 @@ export const MyButton = styled(Button)(({ theme }) => ({
   color: "black",
   background: Colors.green,
   "&.MuiButton-root:hover": {
-    color: Colors.white_off,
+    color: Colors.light_grey,
     background: Colors.green,
   },
   [theme.breakpoints.down("md")]: {
@@ -100,7 +101,6 @@ export const MyButton = styled(Button)(({ theme }) => ({
 // 3 columns Banner news.
 export const BannerHeader = styled(Typography)(() => ({
   color: Colors.secondary,
-  // fontSize: "32px",
 }));
 
 export const BannerList = styled(List)(({ type, theme }) => ({
@@ -138,22 +138,4 @@ export const BannerText = styled(Typography)(({ theme }) => ({
   marginInlineStart: "0em",
   marginInlineEnd: "0em",
   fontFamily: "__Work_Sans_aef32b",
-}));
-
-// export const BannerImage = styled("img")(({ src, theme }) => ({
-//   src: `url(${src})`,
-//   marginLeft: "4rem",
-//   width: "100px",
-// }));
-
-export const BannerImage = styled(Box)(({ theme }) => ({
-  // display: "flex",
-  // justifyContent: "center",
-  // width: "100%",
-  // height: "100%",
-  // padding: "0px 0px",
-  // [theme.breakpoints.down("sm")]: {
-  //   flexDirection: "column",
-  //   alignItems: "start",
-  // },
 }));

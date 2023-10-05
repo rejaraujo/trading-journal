@@ -1,13 +1,18 @@
+// app/ThemeRegistry.tsx
 "use client";
-
-import React, { useState } from "react";
 import createCache from "@emotion/cache";
 import { useServerInsertedHTML } from "next/navigation";
-import { CacheProvider as DefaultCacheProvider } from "@emotion/react";
+import { CacheProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+// import theme from "/path/to/your/theme";
+import theme from "@/styles/theme";
+import { useState } from "react";
 
-export function NextAppDirEmotionCacheProvider(props) {
-  const { options, CacheProvider = DefaultCacheProvider, children } = props;
-
+// This implementation is from emotion-js
+// https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
+export default function ThemeRegistry(props) {
+  const { options, children } = props;
   const [{ cache, flush }] = useState(() => {
     const cache = createCache(options);
     cache.compat = true;
@@ -48,5 +53,12 @@ export function NextAppDirEmotionCacheProvider(props) {
     );
   });
 
-  return <CacheProvider value={cache}>{children}</CacheProvider>;
+  return (
+    <CacheProvider value={cache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </CacheProvider>
+  );
 }

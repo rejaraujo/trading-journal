@@ -16,7 +16,7 @@ export default function AppbarMobile({ matches }) {
     <AppbarContainer
       sx={{
         borderBottom: 1,
-        borderBottomColor: "grey.200",
+        borderBottomColor: Colors.light_grey,
         padding: "0rem 2rem 0rem 0rem ",
       }}>
       <AppbarHeader>
@@ -29,8 +29,8 @@ export default function AppbarMobile({ matches }) {
           <MenuIcon
             fontSize="large"
             sx={{
-              backgroundColor: Colors.blue_green,
-              color: Colors.white_off,
+              backgroundColor: Colors.secondary,
+              color: Colors.light_grey,
               borderRadius: "4px",
               p: "7px",
             }}

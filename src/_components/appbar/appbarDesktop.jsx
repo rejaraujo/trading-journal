@@ -1,10 +1,7 @@
-import {
-  AppbarContainer,
-  AppbarHeader,
-  MyList,
-  MyListItemText,
-} from "@/styles/appbar";
-import { Menu, MenuItem, ListItem, ListItemButton } from "@mui/material";
+"use client";
+
+import { AppbarContainer, AppbarHeader, MyList } from "@/styles/appbar";
+import { Menu, MenuItem, ListItemButton } from "@mui/material";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "../../styles/theme";
@@ -30,7 +27,7 @@ export default function AppbarDesktop({ matches }) {
       <AppbarContainer
         sx={{
           borderBottom: 1,
-          borderBottomColor: Colors.dove_gray,
+          borderBottomColor: Colors.light_grey,
         }}>
         {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
         <AppbarHeader>
@@ -44,7 +41,7 @@ export default function AppbarDesktop({ matches }) {
             disableTouchRipple
             sx={{
               // justifyContent: "center",
-              color: Colors.dim_grey,
+              color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
@@ -87,7 +84,7 @@ export default function AppbarDesktop({ matches }) {
             disableTouchRipple
             sx={{
               // justifyContent: "center",
-              color: Colors.dim_grey,
+              color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
@@ -108,7 +105,7 @@ export default function AppbarDesktop({ matches }) {
             disableTouchRipple
             sx={{
               // justifyContent: "center",
-              color: Colors.dim_grey,
+              color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
@@ -129,7 +126,7 @@ export default function AppbarDesktop({ matches }) {
             disableTouchRipple
             sx={{
               // justifyContent: "center",
-              color: Colors.dim_grey,
+              color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
@@ -178,7 +175,7 @@ export default function AppbarDesktop({ matches }) {
               sx={{
                 justifyContent: "center",
                 "&.MuiListItemButton-root:hover": {
-                  color: Colors.white_off,
+                  color: Colors.light_grey,
                   background: "transparent",
                 },
               }}>

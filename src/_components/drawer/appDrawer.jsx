@@ -6,7 +6,7 @@ import { DrawerCloseButton } from "@/styles/drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector, useDispatch } from "react-redux";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
-import { Actions } from "..";
+// import { Actions } from "../../app";
 
 export default function AppDrawer() {
   const { drawerOpen } = useSelector((state) => state.drawerOpen);
@@ -19,7 +19,6 @@ export default function AppDrawer() {
           <CloseIcon
             sx={{
               fontSize: "2rem",
-              // background: "red",
             }}
           />
         </DrawerCloseButton>
@@ -48,7 +47,7 @@ export default function AppDrawer() {
           <ListItemButton>
             <ListItemText>HELP</ListItemText>
           </ListItemButton>
-          <Actions />
+          {/* <Actions /> */}
         </List>
       </Drawer>
     </>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid, List, ListItemText, Stack, Button } from "@mui/material";
 import { FooterTitle, FooterText } from "../../styles/footer";
 import { Colors } from "../../styles/theme";
@@ -16,7 +18,7 @@ export default function Footer() {
       pr={"2rem"}
       pt={"4rem"}
       sx={{
-        background: Colors.blue_green,
+        background: Colors.secondary,
         color: Colors.white,
         fontSize: { xs: "14px", md: "16px" },
         textAlign: "left",

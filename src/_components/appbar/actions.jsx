@@ -25,7 +25,7 @@ export default function Actions() {
               display: "flex",
               justifyContent: "center",
               fontWeight: "bold",
-              color: Colors.white_off,
+              color: Colors.white_off, // check the color
               background: Colors.green,
               borderRadius: "4px",
               letterSpacing: "0.64px",
@@ -42,7 +42,7 @@ export default function Actions() {
         sx={{
           justifyContent: "center",
           "&.MuiListItemButton-root:hover": {
-            color: Colors.white_off,
+            color: Colors.white_off, // check the color
             background: "transparent",
           },
         }}>

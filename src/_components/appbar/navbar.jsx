@@ -1,14 +1,13 @@
-// "use client";
+"use client";
 
+import { AppbarDesktop, AppbarMobile } from "@/app";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { AppbarMobile, AppbarDesktop } from "..";
 
-export default function Appbar() {
+export default function NavBar() {
   const theme = useTheme();
 
   // if it is true it will be on Desktop otherwise Mobile.
   const matches = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <>
       <div>
