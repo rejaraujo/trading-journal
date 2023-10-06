@@ -549,8 +549,7 @@ export default function Page() {
           lg={12}
           mt={4}
           display="flex"
-          flexDirection={"column"}
-          sx={{ background: "yellow" }}></Grid>
+          flexDirection={"column"}></Grid>
         <FeatureBreakdownTable />
       </Grid>
     </>

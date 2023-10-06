@@ -6,3 +6,9 @@
 4. understand how to replace the layout.js file to a customized one
 5. change the style file organization.
 6. fix the border under the navbar in mobile view.
+
+You have several ways to customize a Mui component, but my three favorite approaches are:
+
+    Styled utility
+    Sx prop
+    Custom global theme
