@@ -6,22 +6,8 @@ import Image from "next/image";
 import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "@/styles/theme";
 import Link from "next/link";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
 
 export default function HelpAppbarDesktop({ matches }) {
-  const { anchorEl } = useAppSelector((state) => state.anchorEl);
-  const dispatch = useAppDispatch();
-
-  const handleClick = (event) => {
-    dispatch(setAnchorEl(event.currentTarget));
-  };
-
-  const handleClose = () => {
-    dispatch(setAnchorEl(null));
-  };
-
-  const open = Boolean(anchorEl);
   return (
     <>
       <AppbarContainer
@@ -31,11 +17,9 @@ export default function HelpAppbarDesktop({ matches }) {
         }}>
         {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
         <AppbarHeader>
-          <Link href="/">
-            <Image src={Logo} alt="logo" quality={100} width={190} />
-          </Link>
+          <Image src={Logo} alt="logo" quality={100} width={190} />
         </AppbarHeader>
-        <MyList type="row" sx={{}}>
+        <MyList type="row" sx={{ flexGrow: 0 }}>
           <ListItemButton
             variant="contained"
             disableTouchRipple

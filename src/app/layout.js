@@ -2,9 +2,8 @@ import "./globals.css";
 import { Work_Sans } from "next/font/google";
 import { ReduxProvider } from "../redux/provider";
 import ThemeRegistry from "./ThemeRegistry";
-import { AppDrawer, Footer, NavBar } from ".";
+import { Footer, NavBar } from ".";
 import { CssBaseline } from "@mui/material";
-// import { ThemeRegistry } from "@/theme/themeRegistry";
 
 // instantiate the Work_Sans object by providing the subsets.
 const workSans = Work_Sans({
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
           <ThemeRegistry options={{ key: "mui" }}>
             <CssBaseline />
             <NavBar />
-            <AppDrawer />
             {children}
             <Footer />
           </ThemeRegistry>

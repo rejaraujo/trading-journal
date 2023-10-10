@@ -46,6 +46,7 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ paddingTop: 1, paddingBottom: 2 }}>
       <AppBar
+        elevation={0}
         variant="outlined"
         position="static"
         sx={{
