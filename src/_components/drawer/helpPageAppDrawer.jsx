@@ -6,9 +6,10 @@ import { DrawerCloseButton } from "@/styles/drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector, useDispatch } from "react-redux";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
+import Link from "next/link";
 // import { Actions } from "../../app";
 
-export default function HelpAppDrawer() {
+export default function HelpPageAppDrawer() {
   const { drawerOpen } = useSelector((state) => state.drawerOpen);
   const dispatch = useDispatch();
 
@@ -27,7 +28,9 @@ export default function HelpAppDrawer() {
       <Drawer open={drawerOpen}>
         <List>
           <ListItemButton>
-            <ListItemText>HOME</ListItemText>
+            <ListItemText>
+              <Link href="/">HOME</Link>
+            </ListItemText>
           </ListItemButton>
           <ListItemButton>
             <ListItemText>CONTACT</ListItemText>

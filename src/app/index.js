@@ -5,4 +5,5 @@ export { default as Actions } from "../_components/appbar/actions";
 export { default as HomePage } from "../_components/homePage/homePage";
 export { default as Footer } from "../_components/footer/footer";
 export { default as AppDrawer } from "../_components/drawer/appDrawer";
-export { default as HelpAppDrawer } from "../_components/drawer/helpAppDrawer";
+export { default as HelpPageAppDrawer } from "../_components/drawer/helpPageAppDrawer";
+export { default as HelpPageAppbarDesktop } from "../_components/appbar/helpPageAppbarDesktop.jsx";

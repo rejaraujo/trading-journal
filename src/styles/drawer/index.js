@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@mui/material/styles";
-import { Colors, DrawerWidth } from "../theme";
+import { Colors } from "../theme";
 import { IconButton } from "@mui/material";
 
 export const DrawerCloseButton = styled(IconButton)(() => ({

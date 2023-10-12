@@ -1,8 +1,13 @@
 "use client";
 
-import { AppDrawer, AppbarDesktop, AppbarMobile, HelpAppDrawer } from "@/app";
+import {
+  AppDrawer,
+  AppbarDesktop,
+  AppbarMobile,
+  HelpPageAppDrawer,
+  HelpPageAppbarDesktop,
+} from "@/app";
 import { useMediaQuery, useTheme } from "@mui/material";
-import HelpAppbarDesktop from "./helpAppbarDesktop";
 import { usePathname } from "next/navigation";
 
 export default function NavBar() {
@@ -24,10 +29,11 @@ export default function NavBar() {
           matches ? (
             <>
               <AppbarMobile matches={matches} />
-              <HelpAppDrawer />
+              <HelpPageAppDrawer />
             </>
           ) : (
-            <HelpAppbarDesktop matches={matches} />
+            <HelpPageAppbarDesktop />
+            // <HelpAppbarDesktop matches={matches} />
           )
         ) : matches ? (
           <>

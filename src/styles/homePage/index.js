@@ -1,6 +1,6 @@
 "use client";
 
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
 import { Box, Typography, List, Button } from "@mui/material";
 import { Colors } from "../theme";
 

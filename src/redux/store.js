@@ -3,11 +3,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import drawerReducer from "./features/drawer/drawerSlice";
 import anchorElReducer from "./features/anchorEl/anchorSlice";
+import contactBoxReducer from "./features/contactBox/contactBoxSlice";
 
 export const store = configureStore({
   reducer: {
     drawerOpen: drawerReducer,
     anchorEl: anchorElReducer,
+    showContactBox: contactBoxReducer,
   },
 });
 

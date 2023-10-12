@@ -1,3 +1,4 @@
+import SearchBox from "@/_components/helpPage/contactDrawer";
 import { BannerText, BannerTitle, MessageText } from "@/styles/homePage";
 import { Grid } from "@mui/material";
 
@@ -15,9 +16,7 @@ export default function Page() {
           md={12}
           lg={12}
           display="flex"
-          flexDirection={"column"}
-          // sx={{ background: "pink" }}
-        >
+          flexDirection={"column"}>
           <BannerTitle>Community</BannerTitle>
           <BannerText>
             These are the mos recent trades shared by the community

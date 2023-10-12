@@ -10,7 +10,7 @@ import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
 
-export default function HelpAppbarMobile({ matches }) {
+export default function HelpPageAppbarMobile({ matches }) {
   const dispatch = useDispatch();
   return (
     <AppbarContainer

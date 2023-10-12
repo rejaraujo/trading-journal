@@ -6,8 +6,12 @@ import Image from "next/image";
 import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "@/styles/theme";
 import Link from "next/link";
+import ContactBox from "../helpPage/contactDrawer";
+import { useAppDispatch } from "@/redux/hooks";
+import { setShowContactBox } from "@/redux/features/contactBox/contactBoxSlice";
 
 export default function HelpAppbarDesktop({ matches }) {
+  const dispatch = useAppDispatch();
   return (
     <>
       <AppbarContainer
@@ -44,6 +48,7 @@ export default function HelpAppbarDesktop({ matches }) {
           <ListItemButton
             variant="contained"
             disableTouchRipple
+            onClick={() => dispatch(setShowContactBox(true))}
             sx={{
               // justifyContent: "center",
               color: Colors.secondary,
@@ -52,17 +57,10 @@ export default function HelpAppbarDesktop({ matches }) {
                 background: "transparent",
               },
             }}>
-            <Link
-              href="/contact"
-              style={{
-                fontSize: "15px",
-                letterSpacing: "0.64px",
-                margin: 0,
-              }}>
-              CONTACT
-            </Link>
+            CONTACT
           </ListItemButton>
         </MyList>
+        <ContactBox />
       </AppbarContainer>
     </>
   );

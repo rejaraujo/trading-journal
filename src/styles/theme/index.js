@@ -35,7 +35,7 @@ const theme = createTheme({
           // height: 600,
           background: Colors.light_grey,
           color: Colors.primary,
-          borderRadius: "0px 100px 0px 0px",
+          // borderRadius: "0px 100px 0px 0px",
           borderRight: `10px solid ${Colors.secondary}`,
         },
       },
