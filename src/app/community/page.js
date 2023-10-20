@@ -1,8 +1,7 @@
-import SearchBox from "@/_components/helpPage/contactDrawer";
-import { BannerText, BannerTitle, MessageText } from "@/styles/homePage";
+import { BannerText, BannerTitle } from "@/styles/homePage";
 import { Grid } from "@mui/material";
 
-export default function Page() {
+export default function Coommunity() {
   return (
     <>
       <Grid

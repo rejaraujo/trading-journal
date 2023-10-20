@@ -1,7 +1,7 @@
 "use client";
 
 import { styled, alpha } from "@mui/material/styles";
-import { InputBase } from "@mui/material";
+import { CardContent, CardHeader, Grid, InputBase } from "@mui/material";
 import { Box, TextField } from "@mui/material";
 // import InputBase from "@mui/material/InputBase";
 import { Colors } from "../theme";
@@ -37,16 +37,22 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
 //
 export const ContactBoxContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: 70,
-  right: 50,
+  top: 55,
+  right: 65,
   width: "28%",
   height: "100%",
-  // background: Colors.light_grey,
+  background: "transparent",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   zIndex: 99999,
   // opacity: 0.9,
+  [theme.breakpoints.down("md")]: {
+    right: 100,
+  },
+  [theme.breakpoints.down("sm")]: {
+    left: 100,
+  },
 }));
 
 export const SearchField = styled(TextField)(({ theme }) => ({
@@ -64,4 +70,41 @@ export const SearchField = styled(TextField)(({ theme }) => ({
     borderBottom: `1px solid ${Colors.secondary}`,
   },
   padding: "0 0 0 40px",
+}));
+
+export const MyGrid = styled(Grid)(({ theme }) => ({
+  // Add styles for the Grid component here
+  padding: "4em",
+  paddingBottom: 0,
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+}));
+
+export const MyGridItem = styled(Grid)(({ theme }) => ({
+  // Add styles for the Grid item component here
+  display: "flex",
+  flexDirection: "column",
+}));
+
+export const MyCardHeader = styled(CardHeader)(({ theme }) => ({
+  ".MuiCardHeader-root": {},
+  ".MuiCardHeader-title": {
+    variant: "subtitle1",
+    fontSize: "20px",
+    fontWeight: 400,
+    lineHeight: "1.3em",
+    textAlign: "center",
+    paddingTop: "0.86rem",
+  },
+}));
+
+export const MyCardContent = styled(CardContent)(({ theme }) => ({
+  fontSize: "14px",
+  fontFamily: "sans-serif",
+  fontWeight: "bold",
+  color: Colors.green,
+  textAlign: "center",
+  lineHeight: "18px",
+  padding: "0rem 4rem",
 }));

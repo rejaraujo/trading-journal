@@ -1,6 +1,5 @@
 "use client";
-
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "../../redux/features/drawer/drawerSlice";
 import { IconButton } from "@mui/material";
 import { AppbarContainer, AppbarHeader } from "../../styles/appbar";
@@ -11,7 +10,7 @@ import { Colors } from "../../styles/theme";
 import Link from "next/link";
 
 export default function AppbarMobile({ matches }) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <AppbarContainer
       sx={{

@@ -1,7 +1,5 @@
-export default function Page() {
-  return (
-    <>
-      <h1>Sign Up</h1>
-    </>
-  );
-}
+import React from "react";
+
+export const SignUp = () => {
+  return <div>Welcome to the plans page</div>;
+};

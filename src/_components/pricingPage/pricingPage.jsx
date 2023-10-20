@@ -1,96 +1,138 @@
 "use client";
 
-import Grid from "@mui/material/Grid";
-import { MyBox, Testimonial, BannerTitle } from "@/styles/homePage";
 import {
+  Grid,
   Card,
-  CardHeader,
   CardContent,
-  Typography,
   ListItem,
   List,
   ListItemText,
-  ListItemButton,
   Divider,
 } from "@mui/material";
+import {
+  MyGrid,
+  MyGridItem,
+  BannerTitle,
+  BannerMessage,
+  MyTypography,
+  MyCardHeader,
+  MyListItemButton,
+} from "@/styles/pricing";
 import Link from "next/link";
 import { Colors } from "@/styles/theme";
-// import FeatureBreakdownTable from "@/_components/table/featureBreakdown";
 import FeatureBreakdownTable from "./featureBreakdownTable";
+
+const commonLinkStyle = {
+  display: "flex",
+  justifyContent: "center",
+  fontWeight: "bold",
+  background: Colors.green,
+  color: "white",
+  borderRadius: "4px",
+  letterSpacing: "1px",
+  lineHeight: 1,
+  fontWeight: "bold",
+  flexGrow: 1,
+  fontSize: "15px",
+  padding: "12px",
+};
+
+const items = [
+  {
+    id: 1,
+    title: "Basic",
+    subheader: "free",
+    features: [
+      "Up to 30 Trades Per Month",
+      "Basic Journaling",
+      "Basic Reporting",
+      "Sharing",
+      "Stocks, Options, Futures, Forex",
+    ],
+    linkText: "SIGN UP",
+    linkStyle: {
+      ...commonLinkStyle,
+      background: Colors.dove_gray,
+    },
+  },
+  {
+    id: 2,
+    title: "Silver",
+    subheader: "$29.00/monthly",
+    features: [
+      "Unlimited Trades Per Month",
+      "Enhanced Journaling",
+      "Advanced Reporting",
+      "Sharing",
+      "Stocks, Options, Futures, Forex",
+    ],
+    linkText: "SIGN UP",
+    linkStyle: commonLinkStyle,
+  },
+  {
+    id: 3,
+    title: "Gold",
+    subheader: "$49.00/monthly",
+    features: [
+      "Unlimited Trades Per Month",
+      "Enhanced Journaling",
+      "Advanced Reporting",
+      "Sharing",
+      "Stocks, Options, Futures, Forex",
+      "Risk Analysis",
+    ],
+    linkText: "SIGN UP",
+    linkStyle: commonLinkStyle,
+  },
+];
 
 export default function PricingPage() {
   return (
     <>
-      <Grid
-        container
-        pl={{ xs: "1rem", lg: "4rem" }}
-        pr={"3rem"}
-        pt={{ xs: "4rem", md: "6rem", lg: "5rem" }}>
-        <Grid
-          item
-          xs={12}
-          md={12}
-          lg={12}
-          display="flex"
-          flexDirection={"column"}
-          // sx={{ background: "pink" }}
-        >
+      <MyGrid container>
+        <MyGridItem item xs={12} md={12} lg={12}>
           <List>
             <ListItem alignItems="flex-start">
               <ListItemText
                 disableTypography
                 primary={
-                  <BannerTitle
-                    sx={{
-                      textAlign: "center",
-                      fontSize: "42px",
-                      lineHeight: "50px",
-                      letterSpacing: "3",
-                    }}>
+                  <BannerTitle>
                     Keep your Trading Journal with ease.
                   </BannerTitle>
                 }
                 secondary={
                   <>
-                    <Testimonial
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                      sx={{ textAlign: "center" }}>
+                    <BannerMessage>
                       A trading journal is one of the best ways to improve your
                       trading – and Tradervue is the most powerful tool
                       available to keep your journal.
-                    </Testimonial>
+                    </BannerMessage>
                   </>
                 }
               />
             </ListItem>
           </List>
-        </Grid>
+        </MyGridItem>
         {/* TRADE WITH A FIRM */}
-        <Grid
+        <MyGridItem
           item
           sm={12}
           md={12}
           lg={12}
-          display="flex"
           flexDirection={"row"}
           mt={"2rem"}
-          // sx={{ background: "pink" }}
-        >
-          <MyBox>
-            <Typography variant="p">
-              Trade with a firm? Take a look at{" "}
-              <Link
-                href="/trading-firms"
-                style={{
-                  color: Colors.green,
-                }}>
-                Tradervue for trading firms.
-              </Link>
-            </Typography>
-          </MyBox>
-        </Grid>
+          sx={{ background: Colors.light_grey }}>
+          <MyTypography>
+            Trade with a firm? Take a look at{" "}
+            <Link
+              href="/trading-firms"
+              style={{
+                color: Colors.green,
+              }}>
+              Tradervue for trading firms.
+            </Link>
+          </MyTypography>
+        </MyGridItem>
         {/* PACKAGES */}
         <Grid
           item
@@ -101,436 +143,47 @@ export default function PricingPage() {
           sx={{
             marginTop: "4rem",
           }}>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            lg={4}
-            display="flex"
-            flexDirection={"column"}>
-            <Card
-              sx={{
-                background: Colors.light_grey,
-              }}>
-              <CardHeader
-                titleTypographyProps={{
-                  variant: "subtitle1",
-                  fontSize: "32px",
-                  fontWeight: "bold",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-                title="Basic"
-                subheader="free"
-                subheaderTypographyProps={{
-                  variant: "subtitle1",
-                  fontFamily: "sans-serif",
-                  fontSize: "26px",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-              />
-              <Divider />
-              <CardContent sx={{ margin: "0rem" }}>
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "10px",
-                  }}>
-                  Up to 30 Trades Per Month
-                </Typography>
+          {items.map((item, index) => (
+            <MyGridItem key={item.id} item xs={12} md={4} lg={4}>
+              <Card
+                sx={{
+                  background: Colors.light_grey,
+                }}>
+                <MyCardHeader title={item.title} subheader={item.subheader} />
                 <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Basic Journaling
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Basic Reporting
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Sharing
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Stocks, Options, Futures, Forex
-                </Typography>
-                <Divider />
-                <ListItemButton
-                  variant="contained"
-                  disableTouchRipple
-                  sx={{
-                    justifyContent: "center",
-                    padding: "0px",
-                    marginTop: "5rem",
-                    "&.MuiListItemButton-root:hover": {
-                      // color: Colors.light_grey,
-                      background: "transparent",
-                    },
-                  }}>
-                  <Link
-                    href="/signin"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      fontWeight: "bold",
-                      background: Colors.dove_gray,
-                      color: "white",
-                      borderRadius: "4px",
-                      letterSpacing: "1px",
-                      lineHeight: 1,
-                      fontWeight: "bold",
-                      flexGrow: 1,
-                      fontSize: "15px",
-                      padding: "10px",
-                    }}>
-                    SIGN UP
-                  </Link>
-                </ListItemButton>
-              </CardContent>
-            </Card>
-          </Grid>
-          {/* SILVER PACK */}
-          <Grid
-            item
-            xs={12}
-            md={4}
-            lg={4}
-            display="flex"
-            flexDirection={"column"}>
-            <Card>
-              <CardHeader
-                titleTypographyProps={{
-                  variant: "subtitle1",
-                  fontSize: "32px",
-                  fontWeight: "bold",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-                title="Silver"
-                subheader="$29.00/montlhy"
-                subheaderTypographyProps={{
-                  variant: "subtitle1",
-                  fontFamily: "sans-serif",
-                  fontSize: "26px",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-              />
-              <Divider />
-              <CardContent sx={{ margin: "0rem" }}>
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "10px",
-                  }}>
-                  Unlimited Trades Per Month
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Enhanced Journaling
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Advanced Reporting
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Sharing
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Stocks, Options, Futures, Forex
-                </Typography>
-                <Divider />
-                <ListItemButton
-                  variant="contained"
-                  disableTouchRipple
-                  sx={{
-                    justifyContent: "center",
-                    padding: "0px",
-                    marginTop: "5rem",
-                    "&.MuiListItemButton-root:hover": {
-                      // color: Colors.light_grey,
-                      background: "transparent",
-                    },
-                  }}>
-                  <Link
-                    href="/signin"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      fontWeight: "bold",
-                      background: Colors.green,
-                      color: "white",
-                      borderRadius: "4px",
-                      letterSpacing: "1px",
-                      lineHeight: 1,
-                      fontWeight: "bold",
-                      flexGrow: 1,
-                      fontSize: "15px",
-                      padding: "10px",
-                    }}>
-                    SIGN UP
-                  </Link>
-                </ListItemButton>
-              </CardContent>
-            </Card>
-          </Grid>
-          {/* GOLD PACK */}
-          <Grid
-            item
-            xs={12}
-            md={4}
-            lg={4}
-            display="flex"
-            flexDirection={"column"}>
-            <Card>
-              <CardHeader
-                titleTypographyProps={{
-                  variant: "subtitle1",
-                  fontSize: "32px",
-                  fontWeight: "bold",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-                title="Gold"
-                subheader="$49.00/montlhy"
-                subheaderTypographyProps={{
-                  variant: "subtitle1",
-                  fontFamily: "sans-serif",
-                  fontSize: "26px",
-                  lineHeight: "40px",
-                  letterSpacing: "2.05px",
-                  textAlign: "center",
-                }}
-              />
-              <Divider />
-              <CardContent sx={{ margin: "0rem" }}>
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "10px",
-                  }}>
-                  Unlimited Trades Per Month
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Enhanced Journaling
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Advanced Reporting
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Sharing
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Stocks, Options, Futures, Forex
-                </Typography>
-                <Divider />
-                <Typography
-                  gutterBottom
-                  variant="body2"
-                  sx={{
-                    fontSize: "20px",
-                    color: Colors.secondary,
-                    lineHeight: "28px",
-                    letterSpacing: "0.32px",
-                    textAlign: "center",
-                    padding: "14px",
-                  }}>
-                  Risk Analysis
-                </Typography>
-                <Divider />
-                <ListItemButton
-                  variant="contained"
-                  disableTouchRipple
-                  sx={{
-                    justifyContent: "center",
-                    padding: "0px",
-                    marginTop: "1rem",
-                    "&.MuiListItemButton-root:hover": {
-                      // color: Colors.light_grey,
-                      background: "transparent",
-                    },
-                  }}>
-                  <Link
-                    href="/signin"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      fontWeight: "bold",
-                      background: Colors.green,
-                      color: "white",
-                      borderRadius: "4px",
-                      letterSpacing: "1px",
-                      lineHeight: 1,
-                      fontWeight: "bold",
-                      flexGrow: 1,
-                      fontSize: "15px",
-                      padding: "10px",
-                    }}>
-                    SIGN UP
-                  </Link>
-                </ListItemButton>
-              </CardContent>
-            </Card>
-          </Grid>
+                <CardContent sx={{ margin: "0rem" }}>
+                  {item.features.map((feature, featureIndex) => (
+                    <div key={feature}>
+                      <MyTypography>{feature}</MyTypography>
+                      <Divider />
+                    </div>
+                  ))}
+                </CardContent>
+                {index === 0 || index === 1 ? (
+                  // Give me this for Basic and Silver cards
+                  <MyListItemButton
+                    variant="contained"
+                    disableTouchRipple
+                    sx={{ paddingTop: "4rem" }}>
+                    <Link href="/signin" style={item.linkStyle}>
+                      {item.linkText}
+                    </Link>
+                  </MyListItemButton>
+                ) : (
+                  <MyListItemButton
+                    variant="contained"
+                    disableTouchRipple
+                    sx={{ paddingTop: "0.5rem" }}>
+                    <Link href="/signin" style={item.linkStyle}>
+                      {item.linkText}
+                    </Link>
+                  </MyListItemButton>
+                )}
+              </Card>
+            </MyGridItem>
+          ))}
         </Grid>
-        <Grid
-          item
-          xs={12}
-          md={12}
-          lg={12}
-          mt={4}
-          display="flex"
-          flexDirection={"column"}>
+        <MyGridItem item xs={12} md={12} lg={12}>
           <BannerTitle
             sx={{
               textAlign: "center",
@@ -541,7 +194,7 @@ export default function PricingPage() {
             }}>
             Feature Breakdown
           </BannerTitle>
-        </Grid>
+        </MyGridItem>
         {/* table */}
         <Grid
           item
@@ -552,7 +205,7 @@ export default function PricingPage() {
           display="flex"
           flexDirection={"column"}></Grid>
         <FeatureBreakdownTable />
-      </Grid>
+      </MyGrid>
     </>
   );
 }

@@ -1,7 +1,14 @@
-export default function Page() {
+// pages/login.js
+"use client";
+
+import Login from "@/_components/login/login";
+
+const LoginPage = () => {
   return (
-    <>
-      <h1>Log in</h1>{" "}
-    </>
+    <div>
+      <Login />
+    </div>
   );
-}
+};
+
+export default LoginPage;

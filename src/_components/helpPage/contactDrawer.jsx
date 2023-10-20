@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Colors } from "@/styles/theme";
 import CloseIcon from "@mui/icons-material/Close";
-import React, { useState } from "react";
+import React from "react";
 import { ContactBoxContainer } from "@/styles/helpPage";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
@@ -53,9 +53,10 @@ export default function ContactBox() {
     <>
       <Slide direction="down" in={showContactBox} timeout={500}>
         <ContactBoxContainer>
-          <MyList sx={{ maxWidth: "100%" }}>
+          <MyList>
             <Box
-              // key="unique-key"
+              display="flex"
+              flexDirection="column"
               sx={{
                 background: "rgb(44, 50, 61);",
                 padding: "1rem",
@@ -104,7 +105,10 @@ export default function ContactBox() {
                   key={`input-${index}`}
                   component="form"
                   sx={{
-                    "& .MuiTextField-root": { m: 1, width: "33ch" },
+                    "& .MuiTextField-root": {
+                      m: 1,
+                      width: "33ch",
+                    },
                     paddingLeft: "0.8rem",
                     background: Colors.light_grey,
                   }}
@@ -118,7 +122,10 @@ export default function ContactBox() {
               key="textarea-box"
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "33ch" },
+                "& .MuiTextField-root": {
+                  m: 1,
+                  width: "33ch",
+                },
                 paddingLeft: "0.8rem",
                 background: Colors.light_grey,
               }}
@@ -127,22 +134,28 @@ export default function ContactBox() {
               <TextField label="How can we help?" multiline rows={4} />
             </Box>
             <Box
+              display="flex"
+              flexDirection="row"
               sx={{
                 background: Colors.light_grey,
-                pb: "2rem",
+                // pb: "2rem",
               }}>
               <Button
                 variant="contained"
                 disableTouchRipple
                 sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   color: "white",
                   fontWeight: "bold",
+                  p: "1rem 6rem",
+                  ml: "1rem",
+                  mr: "0.9rem",
+                  mt: "0.9rem",
                   "&.MuiButton-root:hover": {
                     background: "rgb(44, 50, 61);",
                   },
-                  p: "1rem 6rem",
-                  mt: "0.9rem",
-                  ml: "1.4rem",
                 }}>
                 Send a message
               </Button>
@@ -150,7 +163,7 @@ export default function ContactBox() {
             <Box
               sx={{
                 background: Colors.light_grey,
-                pb: "2rem",
+                // pb: "2rem",
               }}>
               <IconButton
                 variant="contained"
@@ -160,6 +173,7 @@ export default function ContactBox() {
                   top: 5,
                   right: 0,
                   color: Colors.green,
+                  background: "transparent",
                 }}>
                 <CloseIcon />
               </IconButton>

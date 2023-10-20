@@ -180,7 +180,7 @@ export default function AppbarDesktop({ matches }) {
                 },
               }}>
               <Link
-                href="/signin"
+                href="/pricing"
                 style={{
                   display: "flex",
                   justifyContent: "center",

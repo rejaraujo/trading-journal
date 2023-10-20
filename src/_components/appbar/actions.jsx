@@ -13,24 +13,26 @@ export default function Actions() {
           variant="contained"
           disableTouchRipple
           sx={{
-            justifyContent: "center",
-            "&.MuiListItemButton-root:hover": {
-              color: Colors.green,
-              background: "transparent",
-              m: "4px",
-            },
+            // justifyContent: "center",
+            // "&.MuiListItemButton-root:hover": {
+            //   color: Colors.green,
+            //   background: "transparent",
+            m: "4px",
+            // },
           }}>
           <ListItem
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              fontWeight: "bold",
-              color: Colors.white_off, // check the color
-              background: Colors.green,
-              borderRadius: "4px",
-              letterSpacing: "0.64px",
-              fontWeight: "bold",
-            }}>
+            sx={
+              {
+                // display: "flex",
+                // justifyContent: "center",
+                // fontWeight: "bold",
+                // color: Colors.white_off, // check the color
+                // background: Colors.green,
+                // borderRadius: "4px",
+                // letterSpacing: "0.64px",
+                // fontWeight: "bold",
+              }
+            }>
             LOG IN
           </ListItem>
         </ListItemButton>
@@ -40,22 +42,24 @@ export default function Actions() {
         variant="contained"
         disableTouchRipple
         sx={{
-          justifyContent: "center",
+          // justifyContent: "center",
           "&.MuiListItemButton-root:hover": {
             color: Colors.white_off, // check the color
             background: "transparent",
           },
         }}>
         <ListItem
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            fontWeight: "bold",
-            background: Colors.green,
-            borderRadius: "4px",
-            letterSpacing: "0.64px",
-            fontWeight: "bold",
-          }}>
+          sx={
+            {
+              // display: "flex",
+              // justifyContent: "center",
+              // fontWeight: "bold",
+              // background: Colors.green,
+              // borderRadius: "4px",
+              // letterSpacing: "0.64px",
+              // fontWeight: "bold",
+            }
+          }>
           SIGN UP
         </ListItem>
       </ListItemButton>

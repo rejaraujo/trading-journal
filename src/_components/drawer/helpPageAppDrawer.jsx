@@ -4,14 +4,16 @@ import { Drawer, List, ListItemButton, ListItemText, Box } from "@mui/material";
 
 import { DrawerCloseButton } from "@/styles/drawer";
 import CloseIcon from "@mui/icons-material/Close";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
+import { setShowContactBox } from "@/redux/features/contactBox/contactBoxSlice";
 import Link from "next/link";
+import ContactBox from "@/_components/helpPage/contactDrawer";
 // import { Actions } from "../../app";
 
 export default function HelpPageAppDrawer() {
-  const { drawerOpen } = useSelector((state) => state.drawerOpen);
-  const dispatch = useDispatch();
+  const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -28,16 +30,15 @@ export default function HelpPageAppDrawer() {
       <Drawer open={drawerOpen}>
         <List>
           <ListItemButton>
-            <ListItemText>
-              <Link href="/">HOME</Link>
-            </ListItemText>
+            <Link href="/">HOME</Link>
           </ListItemButton>
-          <ListItemButton>
-            <ListItemText>CONTACT</ListItemText>
+          <ListItemButton onClick={() => dispatch(setShowContactBox(true))}>
+            CONTACT
           </ListItemButton>
           {/* <Actions /> */}
         </List>
       </Drawer>
+      <ContactBox />
     </>
   );
 }

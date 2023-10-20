@@ -1,16 +1,15 @@
 "use client";
 
 import { Drawer, List, ListItemButton, ListItemText, Box } from "@mui/material";
-
 import { DrawerCloseButton } from "@/styles/drawer";
 import CloseIcon from "@mui/icons-material/Close";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
 // import { Actions } from "../../app";
 
 export default function AppDrawer() {
-  const { drawerOpen } = useSelector((state) => state.drawerOpen);
-  const dispatch = useDispatch();
+  const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
+  const dispatch = useAppDispatch();
 
   return (
     <>
