@@ -27,9 +27,11 @@ export default function HelpPage() {
             }}>
             Tradervue Education & Resources
           </BannerTitle>
+          {/* Search bar component */}
           <PrimarySearchAppBar />
         </Grid>
       </Grid>
+      {/* Cards */}
       <Cards />
     </>
   );

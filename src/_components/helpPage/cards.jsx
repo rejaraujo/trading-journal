@@ -83,7 +83,12 @@ export default function Cards() {
               <Card>
                 <MyCardHeader title={category.title} />
                 <MyCardContent>
-                  <Link href="/category/charts" sx={{ paddingTop: "0rem" }}>
+                  {/* <Link href={category.title} sx={{ paddingTop: "0rem" }}> */}
+                  <Link href="/help/articles" sx={{ paddingTop: "0rem" }}>
+                    {/* <Link
+                    href={`/help/articles/${category.title
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}`}> */}
                     {category.articles}
                   </Link>
                 </MyCardContent>

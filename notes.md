@@ -8,6 +8,10 @@
 <!-- 6. fix the border under the navbar in mobile view. -->
 6. map through the cards in help page.
 7. give redux access to the helpbar mobile.
+8. getStaticProps() in Next.js 13 replaced by getStaticProps:
+   Data fetching functions like getServerSideProps and getStaticProps have been replaced with a new API inside app. getStaticPaths has been replaced with generateStaticParams.
+
+https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 
 You have several ways to customize a Mui component, but my three favorite approaches are:
 
