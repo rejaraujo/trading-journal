@@ -1,6 +1,3 @@
-// Master Detail Pattern
-//  Master Page.
-
 "use client";
 
 import Grid from "@mui/material/Grid";
