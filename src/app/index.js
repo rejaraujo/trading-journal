@@ -8,3 +8,4 @@ export { default as AppDrawer } from "../_components/drawer/appDrawer";
 export { default as HelpPageAppDrawer } from "../_components/drawer/helpPageAppDrawer";
 export { default as HelpPageAppbarDesktop } from "../_components/appbar/helpPageAppbarDesktop.jsx";
 export { default as Cards } from "../_components/helpPage/cards";
+export { default as PostsPage } from "../_components/posts/postsPage";

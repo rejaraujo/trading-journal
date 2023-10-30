@@ -1,8 +1,10 @@
 // pages/login.js
-"use client";
 
 import Login from "@/_components/login/login";
 
+export const metadata = {
+  title: "Tradervue | Login",
+};
 const LoginPage = () => {
   return (
     <div>

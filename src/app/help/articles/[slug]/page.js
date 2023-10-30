@@ -2,15 +2,15 @@
 
 async function getCharacters() {
   return await (
-    await fetch("https://rickandmortyapi.com/api/character")
+    await fetch("https://jsonplaceholder.typicode.com/posts")
   ).json();
 }
 
 export async function generateStaticParams() {
-  const characters = await getCharacters();
+  const articlePost = await getCharacters();
 
-  return characters?.results.map((c) => ({
-    slug: c.name.toLowerCase(),
+  return articlePost.map((post) => ({
+    slug: post.title.toLowerCase(),
   }));
 }
 

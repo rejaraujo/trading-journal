@@ -49,6 +49,7 @@ const items = [
       "Sharing",
       "Stocks, Options, Futures, Forex",
     ],
+    route: "/signup/basic",
     linkText: "SIGN UP",
     linkStyle: {
       ...commonLinkStyle,
@@ -66,6 +67,7 @@ const items = [
       "Sharing",
       "Stocks, Options, Futures, Forex",
     ],
+    route: "/signup/silver",
     linkText: "SIGN UP",
     linkStyle: commonLinkStyle,
   },
@@ -89,123 +91,124 @@ const items = [
 export default function PricingPage() {
   return (
     <>
-      <MyGrid container>
-        <MyGridItem item xs={12} md={12} lg={12}>
-          <List>
-            <ListItem alignItems="flex-start">
-              <ListItemText
-                disableTypography
-                primary={
-                  <BannerTitle>
-                    Keep your Trading Journal with ease.
-                  </BannerTitle>
-                }
-                secondary={
-                  <>
-                    <BannerMessage>
-                      A trading journal is one of the best ways to improve your
-                      trading – and Tradervue is the most powerful tool
-                      available to keep your journal.
-                    </BannerMessage>
-                  </>
-                }
-              />
-            </ListItem>
-          </List>
-        </MyGridItem>
-        {/* TRADE WITH A FIRM */}
-        <MyGridItem
-          item
-          sm={12}
-          md={12}
-          lg={12}
-          flexDirection={"row"}
-          mt={"2rem"}
-          sx={{ background: Colors.light_grey }}>
-          <MyTypography>
-            Trade with a firm? Take a look at{" "}
-            <Link
-              href="/trading-firms"
-              style={{
-                color: Colors.green,
-              }}>
-              Tradervue for trading firms.
-            </Link>
-          </MyTypography>
-        </MyGridItem>
-        {/* PACKAGES */}
-        <Grid
-          item
-          container
-          lg={12}
-          display="flex"
-          spacing={2}
-          sx={{
-            marginTop: "4rem",
-          }}>
-          {items.map((item, index) => (
-            <MyGridItem key={item.id} item xs={12} md={4} lg={4}>
-              <Card
-                sx={{
-                  background: Colors.light_grey,
-                }}>
-                <MyCardHeader title={item.title} subheader={item.subheader} />
-                <Divider />
-                <CardContent sx={{ margin: "0rem" }}>
-                  {item.features.map((feature, featureIndex) => (
-                    <div key={feature}>
-                      <MyTypography>{feature}</MyTypography>
-                      <Divider />
-                    </div>
-                  ))}
-                </CardContent>
-                {index === 0 || index === 1 ? (
-                  // Give me this for Basic and Silver cards
-                  <MyListItemButton
-                    variant="contained"
-                    disableTouchRipple
-                    sx={{ paddingTop: "4rem" }}>
-                    <Link href="/signin" style={item.linkStyle}>
-                      {item.linkText}
-                    </Link>
-                  </MyListItemButton>
-                ) : (
-                  <MyListItemButton
-                    variant="contained"
-                    disableTouchRipple
-                    sx={{ paddingTop: "0.5rem" }}>
-                    <Link href="/signin" style={item.linkStyle}>
-                      {item.linkText}
-                    </Link>
-                  </MyListItemButton>
-                )}
-              </Card>
-            </MyGridItem>
-          ))}
-        </Grid>
-        <MyGridItem item xs={12} md={12} lg={12}>
-          <BannerTitle
-            sx={{
-              textAlign: "center",
-              fontSize: "42px",
-              lineHeight: "50px",
-              letterSpacing: "3",
-              paddingTop: "4rem",
+      {/* <MyGrid container> */}
+      <MyGridItem item xs={12} md={12} lg={12}>
+        <List>
+          <ListItem alignItems="flex-start">
+            <ListItemText
+              disableTypography
+              primary={
+                <BannerTitle>Keep your Trading Journal with ease.</BannerTitle>
+              }
+              secondary={
+                <>
+                  <BannerMessage>
+                    A trading journal is one of the best ways to improve your
+                    trading – and Tradervue is the most powerful tool available
+                    to keep your journal.
+                  </BannerMessage>
+                </>
+              }
+            />
+          </ListItem>
+        </List>
+      </MyGridItem>
+      {/* TRADE WITH A FIRM */}
+      <MyGridItem
+        item
+        sm={12}
+        md={12}
+        lg={12}
+        flexDirection={"row"}
+        mt={"2rem"}
+        sx={{ background: Colors.light_grey, flexGrow: 1 }}>
+        <MyTypography>
+          Trade with a firm? Take a look at{" "}
+          <Link
+            href="/trading-firms"
+            style={{
+              color: Colors.green,
             }}>
-            Feature Breakdown
-          </BannerTitle>
-        </MyGridItem>
-        {/* table */}
-        <Grid
+            Tradervue for trading firms.
+          </Link>
+        </MyTypography>
+      </MyGridItem>
+      {/* PACKAGES */}
+      <Grid
+        item
+        container
+        lg={12}
+        display="flex"
+        spacing={2}
+        sx={{
+          marginTop: "4rem",
+        }}>
+        {items.map((item, index) => (
+          <MyGridItem key={item.id} item xs={12} md={4} lg={4}>
+            <Card
+              sx={{
+                background: Colors.light_grey,
+              }}>
+              <MyCardHeader title={item.title} subheader={item.subheader} />
+              <Divider />
+              <CardContent sx={{ margin: "0rem" }}>
+                {item.features.map((feature, featureIndex) => (
+                  <div key={feature}>
+                    <MyTypography>{feature}</MyTypography>
+                    <Divider />
+                  </div>
+                ))}
+              </CardContent>
+              {index === 0 || index === 1 ? (
+                // Give me this for Basic and Silver cards
+                <MyListItemButton
+                  variant="contained"
+                  disableTouchRipple
+                  sx={{ paddingTop: "4rem" }}>
+                  <Link href="/signup/silver" style={item.linkStyle}>
+                    {item.linkText}
+                  </Link>
+                </MyListItemButton>
+              ) : (
+                <MyListItemButton
+                  variant="contained"
+                  disableTouchRipple
+                  sx={{ paddingTop: "0.5rem" }}>
+                  {/* <Link href={item.route} style={item.linkStyle}>
+                      {item.linkText}
+                    </Link> */}
+                  <Link href="/signup/gold" style={item.linkStyle}>
+                    {item.linkText}
+                  </Link>
+                </MyListItemButton>
+              )}
+            </Card>
+          </MyGridItem>
+        ))}
+      </Grid>
+      <MyGridItem item xs={12} md={12} lg={12}>
+        <BannerTitle
+          sx={{
+            textAlign: "center",
+            fontSize: "42px",
+            lineHeight: "50px",
+            letterSpacing: "3",
+            paddingTop: "4rem",
+          }}>
+          Feature Breakdown
+        </BannerTitle>
+      </MyGridItem>
+      {/* table */}
+      {/* <Grid
           item
           xs={12}
           md={12}
           lg={12}
           mt={4}
           display="flex"
-          flexDirection={"column"}></Grid>
-        <FeatureBreakdownTable />
-      </MyGrid>
+          flexDirection={"column"}></Grid> */}
+      <FeatureBreakdownTable />
+      {/* </MyGrid> */}
     </>
   );
 }
