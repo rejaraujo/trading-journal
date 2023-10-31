@@ -18,7 +18,7 @@ const categories = [
     icon: CandlestickChartIcon,
     title: "Charts",
     articles: "3 articles",
-    link: "help/articles",
+    link: "help/articles/charts",
   },
   {
     id: 2,
@@ -101,7 +101,7 @@ export default function Cards() {
         <Grid item container lg={12} display="flex" spacing={4} p={"2rem"}>
           {categories.map((category) => (
             <MyGridItem key={category.id} item xs={12} md={4} lg={4}>
-              <Link href={category?.link}>
+              <Link href={category.link}>
                 <Card>
                   <MyCardHeader title={category.title} />
                   <MyCardContent>{category.articles}</MyCardContent>

@@ -15,7 +15,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 const drawerWidth = 260;
 
 const links = [
-  { text: "Charts", href: "/help/articles", icon: ChevronRightIcon },
+  { text: "Charts", href: "/help/articles/charts", icon: ChevronRightIcon },
   {
     text: "Exporting Data",
     href: "/help/articles/exporting-data",
