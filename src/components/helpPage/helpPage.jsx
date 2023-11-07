@@ -3,7 +3,7 @@
 import Grid from "@mui/material/Grid";
 import { BannerTitle } from "@/styles/homePage";
 import { Colors } from "@/styles/theme";
-import PrimarySearchAppBar from "@/_components/helpPage/searchAppBar";
+import PrimarySearchAppBar from "@/components/helpPage/searchAppBar";
 import { Cards } from "@/app";
 
 export default function HelpPage() {

@@ -1,6 +1,6 @@
 // pages/login.js
 
-import Login from "@/_components/login/login";
+import Login from "@/components/login/login";
 
 export const metadata = {
   title: "Tradervue | Login",

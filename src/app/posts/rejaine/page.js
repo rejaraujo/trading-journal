@@ -5,8 +5,7 @@ import getPostMetadata from "@/components/getPostMetadata";
 
 // Second step: get the content for each md file
 const getPostContent = (slug) => {
-  // const folder = path.join(process.cwd(), "src/posts"); // Use a relative path
-  const folder = path.join(process.cwd(), "src/posts/charts"); // Use a relative path
+  const folder = path.join(process.cwd(), "src/posts"); // Use a relative path
   const file = path.join(folder, `${slug}.md`);
   const content = fs.readFileSync(file, "utf-8");
   const matterResult = matter(content);

@@ -8,10 +8,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-// export const metadata = {
-//   title: "Articles",
-// };
-
 const drawerWidth = 260;
 
 const links = [
@@ -80,13 +76,6 @@ export default function RootLayout({ children }) {
       <section>
         <Box sx={{ display: "flex" }}>
           <Drawer
-            // PaperProps={{
-            //   style: {
-            //     position: "absolute",
-            //     zIndex: -1,
-            //     top: "5rem",
-            //   },
-            // }}
             variant="permanent"
             sx={{
               width: drawerWidth,
@@ -118,22 +107,8 @@ export default function RootLayout({ children }) {
             </Box>
           </Drawer>
           <Box component="main" sx={{ width: "100%" }}>
-            {/* <Paper display="flex" sx={{ marginTop: "5rem" }}> */}
             {children}
-            {/* </Paper> */}
           </Box>
-
-          {/* <Box
-            component="main"
-            sx={{
-              flexGrow: 1,
-              bgcolor: "background.default",
-              ml: `${drawerWidth}px`,
-              mt: ["48px", "56px", "64px"],
-              p: 3,
-            }}>
-            {children}
-          </Box> */}
         </Box>
       </section>
     </>

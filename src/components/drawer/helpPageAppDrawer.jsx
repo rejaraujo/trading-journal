@@ -8,7 +8,7 @@ import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
 import { setShowContactBox } from "@/redux/features/contactBox/contactBoxSlice";
 import Link from "next/link";
-import ContactBox from "@/_components/helpPage/contactDrawer";
+import ContactBox from "@/components/helpPage/contactDrawer";
 // import { Actions } from "../../app";
 
 export default function HelpPageAppDrawer() {

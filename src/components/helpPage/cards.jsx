@@ -18,7 +18,7 @@ const categories = [
     icon: CandlestickChartIcon,
     title: "Charts",
     articles: "3 articles",
-    link: "help/articles/charts",
+    link: "help/articles",
   },
   {
     id: 2,

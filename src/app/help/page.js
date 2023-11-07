@@ -1,4 +1,4 @@
-import HelpPage from "@/_components/helpPage/helpPage";
+import HelpPage from "@/components/helpPage/helpPage";
 
 export const metadata = {
   title: "Tradervue | Help",

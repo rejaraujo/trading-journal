@@ -1,4 +1,4 @@
-import PricingPage from "@/_components/pricingPage/pricingPage";
+import PricingPage from "@/components/pricingPage/pricingPage";
 
 export const metadata = {
   title: "Tradervue | Pricing",
