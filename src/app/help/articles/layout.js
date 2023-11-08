@@ -6,67 +6,69 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import icon from "@mui/icons-material/ChevronRight";
+import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
 const drawerWidth = 260;
+const iconImage = FolderOpenIcon;
 
 const links = [
-  { text: "Charts", href: "/help/articles/charts", icon: ChevronRightIcon },
+  { text: "Charts", href: "/help/articles/charts", icon: iconImage },
   {
     text: "Exporting Data",
-    href: "/help/articles/exporting-data",
-    icon: ChevronRightIcon,
+    href: "/help/articles/exporting",
+    icon: iconImage,
   },
   {
     text: "Filters",
     href: "/help/articles/filters",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Getting Started ",
     href: "/help/articles/getting-started",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Import Trades",
     href: "/help/articles/import-trades",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Managing Subscriptions ",
     href: "/help/articles/managing-subscriptions",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Managing Trades ",
     href: "/help/articles/managing-trades",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Settings ",
     href: "/help/articles/settings",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Social ",
     href: "/help/articles/social",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
-  { text: "Tags ", href: "/help/articles/tags", icon: ChevronRightIcon },
+  { text: "Tags ", href: "/help/articles/tags", icon: iconImage },
   {
     text: "Trade Reports & Analysis ",
     href: "/help/articles/trade-reports-and-analysis",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Webinar & Events ",
     href: "/help/articles/webinar-and-events",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
   {
     text: "Integrations & API ",
     href: "/help/articles/integrations-and-api",
-    icon: ChevronRightIcon,
+    icon: iconImage,
   },
 ];
 
@@ -91,7 +93,7 @@ export default function RootLayout({ children }) {
                 flexGrow: 1,
               },
             }}>
-            <Box sx={{ overflow: "auto", paddingLeft: "2rem" }}>
+            <Box sx={{ overflow: "auto", paddingLeft: "1rem" }}>
               <List>
                 {links.map(({ text, href, icon: Icon }) => (
                   <ListItem key={href} disablePadding>
@@ -106,7 +108,9 @@ export default function RootLayout({ children }) {
               </List>
             </Box>
           </Drawer>
-          <Box component="main" sx={{ width: "100%" }}>
+          <Box
+            component="main"
+            sx={{ width: "100%", p: "0.4rem 2rem 0.4rem 2rem" }}>
             {children}
           </Box>
         </Box>

@@ -2,8 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-export default function getPostMetadata(relativePath) {
-  const folder = path.join(process.cwd(), relativePath); // Use a relative path
+export default function getPostMetadata() {
+  // const folder = path.join(process.cwd(), "src/posts"); // Use a relative path
+  // const folder = path.join(process.cwd(), "src/posts/charts");
+  const folder = path.join(process.cwd(), "src/posts/charts");
   const files = fs.readdirSync(folder);
   const posts = files
     .filter((file) => file.endsWith(".md"))

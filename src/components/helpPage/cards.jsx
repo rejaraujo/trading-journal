@@ -24,7 +24,7 @@ const categories = [
     id: 2,
     title: "Exporting Data",
     articles: "2 articles",
-    link: "/help/articles/exporting-data",
+    link: "/help/articles/exporting",
   },
   {
     id: 3,

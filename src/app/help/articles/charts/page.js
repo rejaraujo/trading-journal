@@ -1,10 +1,13 @@
-import BlogHomePage from "../page";
+import getPostMetadata from "@/components/getPostMetadata";
+import PostPreview from "@/components/postPreview";
 
-export default function page() {
-  return (
-    <>
-      <h1 style={{ color: "blue" }}>Charts Section</h1>
-      <BlogHomePage />
-    </>
-  );
+export default function PostsCharts() {
+  const folder = "help/articles";
+  const route = "charts";
+
+  const postMetadata = getPostMetadata("src/posts/charts");
+  const postPreviews = postMetadata.map((post) => (
+    <PostPreview key={post.slug} {...post} folder={folder} route={route} />
+  ));
+  return <div>{postPreviews}</div>;
 }
