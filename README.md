@@ -1,34 +1,41 @@
+# FrontEnd Trading Journal Project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Overview:
 
-First, run the development server:
+Welcome to the Trading Journal web application! This project aims to create a dynamic online trading journal that offers traders essential tools, insightful data analysis, and a supportive community to enhance their trading performance. Inspired by the tools used by trading professionals, this project mimics the visual appearance and functionality of the TraderVue web application to provide a comprehensive trading experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Running locally
+
+To experience the app locally, follow these steps:
+
+- Clone this repo:
+
+```sh
+$ git clone https://github.com/your-username/trading-journal.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Then go to the project's folder:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+cd trading-journal
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Install project depedencies: `npm install`
+- Start the development server: `npm run dev`
 
-## Learn More
+This command launches the app in development mode and automatically opens it in your default web browser at [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## File Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+├── public
+└── src
+    ├── app
+    ├── components
+    ├── posts
+    ├── redux
+    └── style
+```
