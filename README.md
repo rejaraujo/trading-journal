@@ -1,6 +1,6 @@
 # FrontEnd Trading Journal Project
 
-Welcome to the Trading Journal web application! This project was initialized using `Create React App`, leveraging the capabilities of Redux and the convenience of Redux Toolkit. Additionally, it incorporates the Material-UI library for designing user interfaces. Inspired by the tools used by trading experts, this project mirrors the visual design and features of the TraderVue web application available at https://www.tradervue.com.
+Welcome to the Trading Journal web application! This project was initialized using both `Create React App` and `Next.js`, leveraging the capabilities of Redux and the convenience of Redux Toolkit. Additionally, it incorporates the Material-UI library for designing user interfaces. Inspired by the tools used by trading experts, this project mirrors the visual design and features of the TraderVue web application available at https://www.tradervue.com.
 
 ## Running locally
 
