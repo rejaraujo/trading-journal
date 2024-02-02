@@ -1,10 +1,6 @@
 # FrontEnd Trading Journal Project
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-Overview:
-
-Welcome to the Trading Journal web application! This project aims to create a dynamic online trading journal that offers traders essential tools, insightful data analysis, and a supportive community to enhance their trading performance. Inspired by the tools used by trading professionals, this project mimics the visual appearance and functionality of the TraderVue web application to provide a comprehensive trading experience.
+Welcome to the Trading Journal web application! This project was initialized using `Create React App`, leveraging the capabilities of Redux and the convenience of Redux Toolkit. Additionally, it incorporates the Material-UI library for designing user interfaces. Inspired by the tools used by trading experts, this project mirrors the visual design and features of the TraderVue web application available at https://www.tradervue.com.
 
 ## Running locally
 
@@ -13,7 +9,7 @@ To experience the app locally, follow these steps:
 - Clone this repo:
 
 ```sh
-$ git clone https://github.com/your-username/trading-journal.git
+git clone https://github.com/rejaraujo/trading-journal.git
 ```
 
 - Then go to the project's folder:
@@ -39,3 +35,7 @@ This command launches the app in development mode and automatically opens it in 
     ├── redux
     └── style
 ```
+
+## Note: Work in Progress
+
+Please note that this project is currently under development and may not have all features implemented. Feel free to contribute or provide feedback to help improve the application.
