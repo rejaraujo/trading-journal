@@ -2,33 +2,42 @@
 
 import { AppbarContainer, AppbarHeader, MyList } from "@/styles/appbar";
 import { ListItemButton } from "@mui/material";
-import Image from "next/image";
-import Logo from "../../../public/images/logo.jpg";
 import { Colors } from "@/styles/theme";
 import Link from "next/link";
 import ContactBox from "../helpPage/contactDrawer";
 import { useAppDispatch } from "@/redux/hooks";
 import { setShowContactBox } from "@/redux/features/contactBox/contactBoxSlice";
 
-export default function HelpAppbarDesktop({ matches }) {
+export default function HelpAppbarDesktop() {
   const dispatch = useAppDispatch();
   return (
     <>
       <AppbarContainer
         sx={{
-          borderBottom: 1,
+          borderBottom: 3,
           borderBottomColor: Colors.light_grey,
+          padding: "38px 48px",
         }}>
-        {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
         <AppbarHeader>
-          <Image src={Logo} alt="logo" quality={100} width={190} />
+          <Link href="/">
+            <span
+              style={{
+                fontFamily: "",
+                fontSize: "34px",
+                fontWeight: "bold",
+                letterSpacing: "2px",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+                paddingLeft: "1.6rem",
+              }}>
+              Trade<strong style={{ color: Colors.green }}>Tracker</strong>{" "}
+            </span>
+          </Link>
         </AppbarHeader>
         <MyList type="row" sx={{ flexGrow: 0 }}>
           <ListItemButton
             variant="contained"
             disableTouchRipple
             sx={{
-              // justifyContent: "center",
               color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
@@ -38,9 +47,9 @@ export default function HelpAppbarDesktop({ matches }) {
             <Link
               href="/"
               style={{
-                fontSize: "15px",
-                letterSpacing: "0.64px",
-                margin: 0,
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "22px",
               }}>
               HOME
             </Link>
@@ -50,12 +59,15 @@ export default function HelpAppbarDesktop({ matches }) {
             disableTouchRipple
             onClick={() => dispatch(setShowContactBox(true))}
             sx={{
-              // justifyContent: "center",
-              color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
                 background: "transparent",
               },
+            }}
+            style={{
+              letterSpacing: "1px",
+              fontWeight: "bold",
+              fontSize: "22px",
             }}>
             CONTACT
           </ListItemButton>

@@ -20,54 +20,23 @@ const links = [
     icon: iconImage,
   },
   {
-    text: "Filters",
-    href: "/help/articles/filters",
+    text: "Fundamental Analysis",
+    href: "/1",
     icon: iconImage,
   },
   {
-    text: "Getting Started ",
-    href: "/help/articles/getting-started",
+    text: "Technical Analysis",
+    href: "/2",
     icon: iconImage,
   },
   {
-    text: "Import Trades",
-    href: "/help/articles/import-trades",
+    text: "Trading Psychology",
+    href: "/3",
     icon: iconImage,
   },
   {
-    text: "Managing Subscriptions ",
-    href: "/help/articles/managing-subscriptions",
-    icon: iconImage,
-  },
-  {
-    text: "Managing Trades ",
-    href: "/help/articles/managing-trades",
-    icon: iconImage,
-  },
-  {
-    text: "Settings ",
-    href: "/help/articles/settings",
-    icon: iconImage,
-  },
-  {
-    text: "Social ",
-    href: "/help/articles/social",
-    icon: iconImage,
-  },
-  { text: "Tags ", href: "/help/articles/tags", icon: iconImage },
-  {
-    text: "Trade Reports & Analysis ",
-    href: "/help/articles/trade-reports-and-analysis",
-    icon: iconImage,
-  },
-  {
-    text: "Webinar & Events ",
-    href: "/help/articles/webinar-and-events",
-    icon: iconImage,
-  },
-  {
-    text: "Integrations & API ",
-    href: "/help/articles/integrations-and-api",
+    text: "Trading Psychology",
+    href: "/4",
     icon: iconImage,
   },
 ];
@@ -75,7 +44,7 @@ const links = [
 export default function RootLayout({ children }) {
   return (
     <>
-      <section>
+      <section style={{ paddingBottom: "2rem" }}>
         <Box sx={{ display: "flex" }}>
           <Drawer
             variant="permanent"

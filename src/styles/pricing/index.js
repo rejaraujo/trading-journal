@@ -12,10 +12,9 @@ import {
 import { Colors } from "../theme";
 
 export const MyGrid = styled(Grid)(({ theme }) => ({
-  paddingLeft: "1rem", // Default value
-  paddingRight: "3rem", // Default value
-  paddingTop: "4rem", // Default value
-
+  paddingLeft: "1rem",
+  paddingRight: "3rem",
+  paddingTop: "4rem",
   // Responsive styles
   [theme.breakpoints.up("md")]: {
     paddingLeft: "6rem",
@@ -26,7 +25,6 @@ export const MyGrid = styled(Grid)(({ theme }) => ({
     paddingTop: "5rem",
   },
 
-  // background: Colors.dove_gray,
   // Other styles
   justifyContent: "center",
   alignItems: "center",
@@ -34,7 +32,6 @@ export const MyGrid = styled(Grid)(({ theme }) => ({
 }));
 
 export const MyGridItem = styled(Grid)(({ theme }) => ({
-  // Add styles for the Grid item component here
   display: "flex",
   flexDirection: "column",
 }));
@@ -50,10 +47,9 @@ export const BannerTitle = styled(Typography)(({ theme }) => ({
 
 export const BannerMessage = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  //
   fontFamily: "__Work_Sans_aef32b",
   fontSize: "1.66rem",
-  paddingTop: "1.5rem",
+  paddingTop: "0.6rem",
   ".MuiTypography-root": {
     color: Colors.primary,
   },
@@ -64,6 +60,7 @@ export const BannerMessage = styled(Typography)(({ theme }) => ({
 }));
 
 export const MyCardHeader = styled(CardHeader)(({ theme }) => ({
+  background: "#ECFFDC",
   ".MuiCardHeader-root": {},
   ".MuiCardHeader-title": {
     variant: "subtitle1",
@@ -76,11 +73,10 @@ export const MyCardHeader = styled(CardHeader)(({ theme }) => ({
   ".MuiCardHeader-subheader": {},
   ".MuiCardHeader-subheader": {
     variant: "subtitle1",
-    fontFamily: "sans-serif",
-    fontSize: "26px",
+    fontSize: "24px",
+    fontWeight: "bold",
     lineHeight: "40px",
     textAlign: "center",
-    letterSpacing: "2.05px",
   },
 }));
 
@@ -92,13 +88,10 @@ export const MyTypography = styled(Typography)(({ theme }) => ({
   lineHeight: "28px",
   padding: "14px",
   margin: "0rem",
-  //   ".MuiTypography-root": {
-  //     variant: "body2",
-  //   },
+  ".MuiTypography-root": {},
 }));
 
 export const MyListItemButton = styled(ListItemButton)(({ theme }) => ({
-  // "&:last-child": {},
   paddingBottom: "2rem",
   "&.MuiListItemButton-root:hover": {
     background: "transparent",

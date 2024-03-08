@@ -1,57 +1,44 @@
 "use client";
 
 import Grid from "@mui/material/Grid";
-import {
-  MyBox,
-  MessageText,
-  Testimonial,
-  MyButton,
-  BannerHeader,
-  BannerTitle,
-  BannerList,
-  BannerText,
-} from "@/styles/homePage";
-import { Typography, ListItem, List, ListItemText } from "@mui/material";
+import { MessageText, MyButton } from "@/styles/homePage";
+import { ListItem, List, ListItemText } from "@mui/material";
 import Image from "next/image";
-import screenTrade from "../../../public/static/images/screenTrade.jpg";
-import Journal from "../../../public/images/computerJournal.jpg";
-import Analyze from "../../../public/images/analyses.jpg";
-import Share from "../../../public/images/share.jpg";
+import winrate from "../../../public/images/win-rate .webp";
+import bussola from "../../../public/images/bussola.jpeg";
+import technicalanalysis from "../../../public/images/technical_analysis.jpeg";
+import mouse from "../../../public/images/mouse.jpeg";
+import Typography from "@mui/material/Typography";
+
 import Link from "next/link";
-import { Colors } from "@/styles/theme";
 
 export default function HomePage() {
   return (
     <>
       <Grid
         container
-        pl={{ xs: "1rem", lg: "4rem" }}
-        pr={"3rem"}
-        pt={{ xs: "4rem", md: "6rem", lg: "7.6rem" }}
-        // sx={{ background: "blue" }}
-      >
-        <Grid
-          item
-          container
-          lg={12}
-          display="flex"
-          spacing={2}
-          // sx={{ background: "green" }}
-        >
+        pl={{ lg: "4rem" }}
+        pr={{ lg: "3rem" }}
+        pt={{ xs: "5rem", md: "6rem", lg: "6rem" }}>
+        <Grid item container lg={12} display="flex" spacing={2}>
           <Grid
             item
             xs={12}
             md={6}
             lg={6}
             display="flex"
-            flexDirection={"column"}>
+            flexDirection={"column"}
+            alignItems={"center"}>
             <Image
-              alt="screen"
-              src={screenTrade}
-              quality={100}
+              alt="winrate"
+              src={winrate}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
               style={{
                 maxWidth: "100%",
                 height: "auto",
+                borderRadius: "4px",
+                textAlign: "center",
               }}
             />
           </Grid>
@@ -63,33 +50,25 @@ export default function HomePage() {
             lg={6}
             display="flex"
             flexDirection={"column"}>
-            <List>
+            <List style={{ paddingTop: 0 }}>
               <ListItem alignItems="flex-start">
                 <ListItemText
+                  style={{ margin: 0 }}
                   disableTypography
                   primary={
                     <MessageText>
-                      The trading journal that will help improve your trading
-                      performance.
+                      Guiding your trading journey & enhancing your skills!{" "}
+                      <br /> Let{" "}
+                      <strong style={{ color: "green" }}>TradeTracker</strong>{" "}
+                      be your compass!
                     </MessageText>
-                  }
-                  secondary={
-                    <>
-                      <Testimonial
-                        component="span"
-                        variant="body2"
-                        color="text.primary">
-                        “SMB traders rely on Tradervue for journaling and
-                        performance analysis.” – Mike Bellafiore, SMB Capital
-                      </Testimonial>
-                    </>
                   }
                 />
               </ListItem>
-              {/* SIGN UP BUTTON */}
-              <ListItem alignItems="flex-start">
+
+              <ListItem alignItems="center">
                 <MyButton>
-                  <Link href="/sign-up" style={{ marginTop: "0px" }}>
+                  <Link href="/membership" style={{}}>
                     SIGN UP NOW
                   </Link>
                 </MyButton>
@@ -97,31 +76,6 @@ export default function HomePage() {
             </List>
           </Grid>
         </Grid>
-        {/* TRADE WITH A FIRM */}
-        <Grid item container lg={12} display="flex" spacing={2}>
-          <Grid
-            item
-            sm={12}
-            md={12}
-            lg={12}
-            display="flex"
-            flexDirection={"row"}
-            sx={{ marginTop: "2rem" }}>
-            <MyBox>
-              <Typography variant="p">
-                Trade with a firm? Take a look at{" "}
-                <Link
-                  href="/trading-firms"
-                  style={{
-                    color: Colors.green,
-                  }}>
-                  Tradervue for trading firms.
-                </Link>
-              </Typography>
-            </MyBox>
-          </Grid>
-        </Grid>
-        {/* ARTICLES */}
         <Grid
           item
           container
@@ -129,7 +83,8 @@ export default function HomePage() {
           display="flex"
           spacing={2}
           sx={{
-            marginTop: "4rem",
+            marginTop: "2rem",
+            marginBottom: "2rem",
           }}>
           <Grid
             item
@@ -137,32 +92,30 @@ export default function HomePage() {
             md={4}
             lg={4}
             display="flex"
-            flexDirection={"column"}>
-            <BannerList>
-              <ListItem alignItems="flex-start">
-                <BannerHeader>
-                  <Image src={Journal} alt="journal" quality={100} width={65} />
-                </BannerHeader>
-                <ListItemText
-                  sx={{ paddingLeft: "1rem" }}
-                  disableTypography
-                  primary={<BannerTitle>Journal</BannerTitle>}
-                  secondary={
-                    <>
-                      <BannerText component="span" variant="body2">
-                        A stock, futures, and forex trading journal that works
-                        for you, not against you.
-                      </BannerText>
-                      <Link href="/trading-journal">
-                        <BannerText sx={{ color: Colors.green }}>
-                          Learn more about our trading journal
-                        </BannerText>
-                      </Link>
-                    </>
-                  }
-                />
-              </ListItem>
-            </BannerList>
+            flexDirection="column"
+            alignItems="center">
+            <Typography
+              variant="h5"
+              align="center"
+              gutterBottom
+              style={{
+                fontWeight: "bold",
+              }}>
+              <Link href="/journal">Journaling</Link>
+            </Typography>
+            <Image
+              src={bussola}
+              alt="journaling"
+              quality={100}
+              width={300}
+              height={300}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                borderRadius: "10px",
+                textAlign: "center",
+              }}
+            />
           </Grid>
           <Grid
             item
@@ -170,32 +123,31 @@ export default function HomePage() {
             md={4}
             lg={4}
             display="flex"
-            flexDirection={"column"}>
-            <BannerList>
-              <ListItem alignItems="flex-start">
-                <BannerHeader>
-                  <Image src={Analyze} alt="analyze" quality={100} width={65} />
-                </BannerHeader>
-                <ListItemText
-                  sx={{ paddingLeft: "1rem" }}
-                  disableTypography
-                  primary={<BannerTitle>Analyze</BannerTitle>}
-                  secondary={
-                    <>
-                      <BannerText component="span" variant="body2">
-                        You’ve been trading a lot. But do you really know what’s
-                        working?
-                      </BannerText>
-                      <Link href="/trading-analysis-software">
-                        <BannerText sx={{ color: Colors.green }}>
-                          Learn more about our trading analysis software
-                        </BannerText>
-                      </Link>
-                    </>
-                  }
-                />
-              </ListItem>
-            </BannerList>
+            flexDirection="column"
+            alignItems="center">
+            <Typography
+              variant="h5"
+              align="center"
+              gutterBottom
+              style={{
+                fontWeight: "bold",
+              }}>
+              <Link href="/technical-analysis"> Technical Analysis</Link>
+            </Typography>
+            <Image
+              src={technicalanalysis}
+              alt="Technical Analysis"
+              quality={100}
+              width={300}
+              height={300}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                borderRadius: "10px",
+                textAlign: "center",
+                // paddingRight: "0.5rem",
+              }}
+            />
           </Grid>
           <Grid
             item
@@ -203,32 +155,30 @@ export default function HomePage() {
             md={4}
             lg={4}
             display="flex"
-            flexDirection={"column"}>
-            <BannerList>
-              <ListItem alignItems="flex-start">
-                <BannerHeader>
-                  <Image src={Share} alt="share" quality={100} width={65} />
-                </BannerHeader>
-                <ListItemText
-                  sx={{ paddingLeft: "1rem" }} // sytle this component so we can do the repsonsive thing.
-                  disableTypography
-                  primary={<BannerTitle>Share</BannerTitle>}
-                  secondary={
-                    <>
-                      <BannerText component="span" variant="body2">
-                        Execution is everything. Share your expertise with the
-                        trading community.
-                      </BannerText>
-                      <Link href="/trading-community">
-                        <BannerText sx={{ color: Colors.green }}>
-                          Learn more about our trading community
-                        </BannerText>
-                      </Link>
-                    </>
-                  }
-                />
-              </ListItem>
-            </BannerList>
+            flexDirection="column"
+            alignItems="center">
+            <Typography
+              variant="h5"
+              align="center"
+              gutterBottom
+              style={{
+                fontWeight: "bold",
+              }}>
+              <Link href="/psychology"> Psychology</Link>
+            </Typography>
+            <Image
+              src={mouse}
+              alt="Psychology"
+              quality={100}
+              width={300}
+              height={300}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                borderRadius: "10px",
+                textAlign: "center",
+              }}
+            />
           </Grid>
         </Grid>
       </Grid>

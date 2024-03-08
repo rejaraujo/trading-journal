@@ -14,7 +14,7 @@ export const Colors = {
   white: "#fff",
   white_off: "#f5f6f7",
   black: "#000",
-  green: "#1EC426",
+  green: "#2E8B57",
 };
 
 const theme = createTheme({

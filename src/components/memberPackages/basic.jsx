@@ -45,7 +45,7 @@ const PlansCategory = () => {
               p: "1rem",
             }}>
             <Typography variant="h5" sx={{ fontWeight: "bold", pl: "1rem" }}>
-              Sign in to Tradervue
+              Sign in to TradeTracker
             </Typography>
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
             <List>
@@ -120,7 +120,7 @@ const PlansCategory = () => {
                   <Typography variant="p">
                     New user?{" "}
                     <Link
-                      href="/pricing"
+                      href="/membership"
                       style={{
                         color: Colors.green,
                         fontWeight: "bold",

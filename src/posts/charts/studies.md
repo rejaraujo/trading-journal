@@ -1,41 +1,11 @@
 ---
-title: Chart Studies and Comparisons
-subtitle: Adding Studies and Comparisons to Your Charts
-date: November 3, 2023
+title: Chart Studies
+subtitle: Adding Studies
+date: September 3, 2023
 ---
 
-Tradervue supports adding studies and comparisons to the auto-generated price charts for silver and gold subscribers.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula leo ut velit scelerisque, nec congue ipsum faucibus. Curabitur vestibulum justo vel luctus ultricies. Integer gravida dui vel ligula laoreet, sed bibendum libero volutpat. Vivamus fermentum dolor eu ex efficitur, ac sollicitudin libero tempus. Nam in urna nec justo volutpat pharetra nec sed nulla. Phasellus sed magna id lacus lacinia blandit. Sed auctor lectus in ligula scelerisque, nec suscipit lorem pellentesque. Donec id ante ligula. Vivamus congue lorem nec libero finibus, id pulvinar leo condimentum. Suspendisse potenti. Nunc nec semper magna. Sed nec diam non ex congue facilisis a sed ligula. Aenean rutrum enim ac massa venenatis, at consequat mauris vulputate.
 
-If you normally use, say, an EMA(20) on the 5-minute chart when you’re trading, then you can see the same in your journal when you’re reviewing later.
+Sed non tristique dui. Nunc placerat nisi et risus sagittis, vitae eleifend mi ultrices. Mauris euismod, nisi et eleifend malesuada, ligula libero dapibus dolor, vitae ultricies nunc libero sit amet libero. Ut a arcu sit amet sem finibus condimentum vel eget est. Mauris tempus libero sed quam mattis, nec dignissim arcu placerat. In interdum ligula quis fermentum convallis. Integer luctus, lorem non pellentesque tincidunt, sapien enim pharetra velit, vitae vulputate magna mauris id dui. Vivamus nec turpis id lacus interdum tristique. Suspendisse potenti. Sed mattis consectetur tellus, id malesuada mi convallis nec. Suspendisse potenti. Maecenas ut sapien vitae velit consectetur suscipit.
 
-Here are a few examples of the new studies in action:
-
-![images/chart-studies](/images/chart-studies.png)
-
-### The supported studies include:
-
-- Exponential Moving Average
-- Simple Moving Average
-- Bollinger Bands
-- VWAP
-- Donchian Channels
-- Keltner Channel
-- Average True Range
-- MACD
-- RSI
-- Fast and Slow Stochastics
-- CCI
-- AD
-
-If you click the study icon above each chart (next to the zoom icon), you’ll see the study editor for that chart, where you can choose studies and edit parameters:
-
-![images/select-studies](/images/select-studies.png)
-
-You can also set studies in your chart defaults, so all of your trades will start out with the same set of information. If you wish to set up your execution charts in this way, please follow these steps:
-
-1. Log-in to your Tradervue account
-2. Click on your username located on the top right corner
-3. Click on the Chart Settings tab on the left
-4. You can have up to four charts on each trade page; specify the default charts you would like for each
-
-![images/account-settings](/images/account-settings.png)
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ac eros ut velit ultricies ultrices. Nulla quis nisi ultricies, bibendum nunc eget, consequat velit. Vestibulum condimentum tellus et ex convallis, nec fringilla lorem dictum. Maecenas vel fermentum justo, eu vehicula orci. Cras auctor lobortis mauris, ut scelerisque quam ultricies sit amet. Morbi fermentum malesuada odio, nec vestibulum lectus consequat eu. Etiam et nunc sit amet lectus condimentum rhoncus. In ut nibh in felis efficitur pellentesque. Vivamus consectetur neque a mauris commodo, vitae tristique lectus luctus. Sed ut bibendum nisi. Curabitur at lacinia purus, non eleifend elit. In fringilla sapien felis, eget facilisis risus faucibus at. Nunc efficitur nisi quis est facilisis, nec vehicula mauris fermentum. Sed pharetra erat a leo tincidunt, vitae vestibulum leo efficitur. Sed pulvinar mauris nec tellus finibus, quis commodo eros volutpat. Sed sit amet tincidunt enim.

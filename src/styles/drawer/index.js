@@ -9,6 +9,5 @@ export const DrawerCloseButton = styled(IconButton)(() => ({
   top: 0,
   left: 300,
   zIndex: 1999, // the button will stay on the top of everything.
-  // background: "transparent",
   color: Colors.light_grey,
 }));

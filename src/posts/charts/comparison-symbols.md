@@ -1,23 +1,21 @@
 ---
-title: Comparison Symbols
+title: Using Comparison Symbols in Price Charts
 subtitle: Adding Comparison Symbols to Your Price Charts
-date: November 3, 2023
+date: January 3, 2023
 ---
 
-Tradervue has the ability to add comparison symbols to your price charts.
+In your trading journey, leveraging comparison symbols can significantly enrich your analysis.
 
-For example, if you wanted to plot the price of the instrument you’re trading and the SPY on the same chart for comparison, you could do so.
+For instance, imagine plotting the price movement of the asset you're trading alongside a relevant index like the S&P 500.
 
-We have made this easy by adding the comparison symbol to your default chart settings:
+We've streamlined this process for you by integrating comparison symbols into your default chart settings:
 
-![images/your-account-settings](/images/your-account-settings.png)
+1. **Accessing Settings:** Begin by navigating to the Dashboard and selecting Settings.
+2. **Chart Settings Tab:** Once in Settings, head over to the Chart Settings tab.
+3. **Adding Comparison Symbols:** Here, you can seamlessly incorporate a comparison symbol into any of your default configured charts.
 
-From the Dashboard, click Settings, go to the Chart Settings tab, and you’ll be able to add a comparison symbol for any of your default configured charts.
+By following these steps, you'll be able to generate charts akin to the example illustrated below:
 
-It will present a chart similar to the example below:
+The beauty of using comparison symbols lies in their normalization to the symbol you're comparing them with. This ensures a coherent presentation of data, allowing for insightful analysis.
 
-![images/adding-comparison-symbols](/images/adding-comparison-symbols.png)
-
-The price for the comparison symbol is normalized to the symbol you’re comparing it to, so they will fit nicely on the same chart.
-
-You can use the comparisons with markets, sectors, other stocks/futures, or whatever you like!
+Whether you're comparing with market indices, sectors, other stocks/futures, or any other assets, the possibilities are endless! Explore the potential and elevate your trading strategy with comparison symbols.
