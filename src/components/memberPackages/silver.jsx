@@ -73,7 +73,7 @@ const SilverPlan = () => {
               p: "1rem",
             }}>
             <Typography variant="h5" sx={{ fontWeight: "bold", pl: "1rem" }}>
-              Sign in to Tradervue
+              Sign in to TradeTracker
             </Typography>
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
             <List>
@@ -261,8 +261,8 @@ const SilverPlan = () => {
                   <Typography
                     variant="body2"
                     sx={{ fontSize: "12px", mt: "1rem" }}>
-                    Yes, please add me to the Tradervue mailing list, to receive
-                    occasional product update emails.
+                    Yes, please add me to the TradeTracker mailing list, to
+                    receive occasional product update emails.
                   </Typography>
                 }
               />

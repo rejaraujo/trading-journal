@@ -1,7 +1,7 @@
 ---
-title: Chart
-subtitle: Choosing Between Table and Charts
-date: June 3, 2023
+title: Exporting Charts
+subtitle: Exporting your charts from TradeTracker
+date: March 19, 2023
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula leo ut velit scelerisque, nec congue ipsum faucibus. Curabitur vestibulum justo vel luctus ultricies. Integer gravida dui vel ligula laoreet, sed bibendum libero volutpat. Vivamus fermentum dolor eu ex efficitur, ac sollicitudin libero tempus. Nam in urna nec justo volutpat pharetra nec sed nulla. Phasellus sed magna id lacus lacinia blandit. Sed auctor lectus in ligula scelerisque, nec suscipit lorem pellentesque. Donec id ante ligula. Vivamus congue lorem nec libero finibus, id pulvinar leo condimentum. Suspendisse potenti. Nunc nec semper magna. Sed nec diam non ex congue facilisis a sed ligula. Aenean rutrum enim ac massa venenatis, at consequat mauris vulputate.

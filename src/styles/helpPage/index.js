@@ -3,7 +3,6 @@
 import { styled, alpha } from "@mui/material/styles";
 import { CardContent, CardHeader, Grid, InputBase } from "@mui/material";
 import { Box, TextField } from "@mui/material";
-// import InputBase from "@mui/material/InputBase";
 import { Colors } from "../theme";
 
 export const Search = styled("div")(({ theme }) => ({
@@ -73,7 +72,6 @@ export const SearchField = styled(TextField)(({ theme }) => ({
 }));
 
 export const MyGrid = styled(Grid)(({ theme }) => ({
-  // Add styles for the Grid component here
   padding: "4em",
   paddingBottom: 0,
   justifyContent: "center",
@@ -82,7 +80,6 @@ export const MyGrid = styled(Grid)(({ theme }) => ({
 }));
 
 export const MyGridItem = styled(Grid)(({ theme }) => ({
-  // Add styles for the Grid item component here
   display: "flex",
   flexDirection: "column",
 }));

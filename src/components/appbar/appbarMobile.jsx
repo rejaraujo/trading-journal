@@ -4,12 +4,11 @@ import { setDrawerOpen } from "../../redux/features/drawer/drawerSlice";
 import { IconButton } from "@mui/material";
 import { AppbarContainer, AppbarHeader } from "../../styles/appbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import Image from "next/image";
-import Logo from "../../../public/images/logo.jpg";
+
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
 
-export default function AppbarMobile({ matches }) {
+export default function AppbarMobile() {
   const dispatch = useAppDispatch();
   return (
     <AppbarContainer
@@ -36,9 +35,18 @@ export default function AppbarMobile({ matches }) {
           />
         </IconButton>
       </AppbarHeader>
-
       <Link href="/">
-        <Image src={Logo} alt="logo" quality={100} width={180} />
+        <span
+          style={{
+            fontFamily: "",
+            fontSize: "34px",
+            fontWeight: "bold",
+            letterSpacing: "2px",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+            paddingLeft: "1.6rem",
+          }}>
+          Trade<strong style={{ color: Colors.green }}>Tracker</strong>{" "}
+        </span>
       </Link>
     </AppbarContainer>
   );

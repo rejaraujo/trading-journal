@@ -1,38 +1,45 @@
 "use client";
 
 import { AppbarContainer, AppbarHeader, MyList } from "@/styles/appbar";
-import { Menu, MenuItem, ListItemButton } from "@mui/material";
-import Image from "next/image";
-import Logo from "../../../public/images/logo.jpg";
+import { ListItemButton } from "@mui/material";
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
+// import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+// import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
 
-export default function AppbarDesktop({ matches }) {
-  const { anchorEl } = useAppSelector((state) => state.anchorEl);
-  const dispatch = useAppDispatch();
+export default function AppbarDesktop({}) {
+  // const { anchorEl } = useAppSelector((state) => state.anchorEl);
+  // const dispatch = useAppDispatch();
 
-  const handleClick = (event) => {
-    dispatch(setAnchorEl(event.currentTarget));
-  };
+  // const handleClick = (event) => {
+  //   dispatch(setAnchorEl(event.currentTarget));
+  // };
 
-  const handleClose = () => {
-    dispatch(setAnchorEl(null));
-  };
+  // const handleClose = () => {
+  //   dispatch(setAnchorEl(null));
+  // };
 
-  const open = Boolean(anchorEl);
+  // const open = Boolean(anchorEl);
   return (
     <>
       <AppbarContainer
         sx={{
-          borderBottom: 1,
+          borderBottom: 3,
           borderBottomColor: Colors.light_grey,
         }}>
-        {/* <AppbarHeader sx={{ position: "absolute", left: "0", pt: 1, ml: 4 }}> */}
         <AppbarHeader>
           <Link href="/">
-            <Image src={Logo} alt="logo" quality={100} width={190} />
+            <span
+              style={{
+                fontFamily: "",
+                fontSize: "34px",
+                fontWeight: "bold",
+                letterSpacing: "2px",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+                paddingLeft: "1.6rem",
+              }}>
+              Trade<strong style={{ color: Colors.green }}>Tracker</strong>{" "}
+            </span>
           </Link>
         </AppbarHeader>
         <MyList type="row" sx={{}}>
@@ -40,7 +47,6 @@ export default function AppbarDesktop({ matches }) {
             variant="contained"
             disableTouchRipple
             sx={{
-              // justifyContent: "center",
               color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
@@ -48,84 +54,19 @@ export default function AppbarDesktop({ matches }) {
               },
             }}>
             <Link
-              href=""
-              id="features-item"
-              onClick={handleClick}
-              aria-controls={open ? "features-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? true : undefined}
+              href="/membership"
               style={{
-                fontSize: "15px",
+                fontSize: "18px",
                 letterSpacing: "0.64px",
+                fontWeight: "bold",
               }}>
-              FEATURES
-            </Link>
-          </ListItemButton>
-
-          <Menu
-            id="features-menu"
-            anchorEl={anchorEl}
-            open={open}
-            MenuListProps={{ "aria-labelledby": "features-items" }}
-            onClose={handleClose}>
-            <MenuItem onClick={handleClose}>
-              <Link href="/journal-features">Journal Features</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link href="/analytical-features">Analytical Features</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              {" "}
-              <Link href="/sharing-features">Sharing Featuress</Link>
-            </MenuItem>
-          </Menu>
-          <ListItemButton
-            variant="contained"
-            disableTouchRipple
-            sx={{
-              // justifyContent: "center",
-              color: Colors.secondary,
-              "&.MuiListItemButton-root:hover": {
-                color: Colors.green,
-                background: "transparent",
-              },
-            }}>
-            <Link
-              href="/pricing"
-              style={{
-                fontSize: "15px",
-                letterSpacing: "0.64px",
-                margin: 0,
-              }}>
-              PRICING
+              MEMBERSHIP
             </Link>
           </ListItemButton>
           <ListItemButton
             variant="contained"
             disableTouchRipple
             sx={{
-              // justifyContent: "center",
-              color: Colors.secondary,
-              "&.MuiListItemButton-root:hover": {
-                color: Colors.green,
-                background: "transparent",
-              },
-            }}>
-            <Link
-              href="/community"
-              style={{
-                fontSize: "15px",
-                letterSpacing: "0.64px",
-                margin: 0,
-              }}>
-              COMMUNITY
-            </Link>
-          </ListItemButton>
-          <ListItemButton
-            variant="contained"
-            disableTouchRipple
-            sx={{
-              // justifyContent: "center",
               color: Colors.secondary,
               "&.MuiListItemButton-root:hover": {
                 color: Colors.green,
@@ -135,11 +76,11 @@ export default function AppbarDesktop({ matches }) {
             <Link
               href="/help"
               style={{
-                fontSize: "15px",
+                fontSize: "18px",
                 letterSpacing: "0.64px",
-                margin: 0,
+                fontWeight: "bold",
               }}>
-              HELP
+              BLOG
             </Link>
           </ListItemButton>
 
@@ -163,7 +104,7 @@ export default function AppbarDesktop({ matches }) {
                   fontWeight: "bold",
                   borderRadius: "4px",
                   letterSpacing: "0.64px",
-                  fontSize: "15px",
+                  fontSize: "18px",
                 }}>
                 LOG IN
               </Link>
@@ -180,7 +121,7 @@ export default function AppbarDesktop({ matches }) {
                 },
               }}>
               <Link
-                href="/pricing"
+                href="/membership"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -190,10 +131,7 @@ export default function AppbarDesktop({ matches }) {
                   letterSpacing: "0.64px",
                   fontWeight: "bold",
                   padding: "16px 48px",
-                  fontSize: "15px",
-                  // "@media (max-width: 600px)": {
-                  //   padding: "0px",
-                  // },
+                  fontSize: "18px",
                 }}>
                 SIGN UP
               </Link>

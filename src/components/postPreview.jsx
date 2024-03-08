@@ -10,9 +10,6 @@ export default function PostPreview(props) {
         <ListItemIcon>
           <FileOpenIcon />
         </ListItemIcon>
-        {/* <Link href={`/help/articles/${props.slug}`}>
-          <ListItemText>{props.title}</ListItemText>
-        </Link> */}
         <Link href={`/${folder}/${route}/${slug}`}>
           <ListItemText>{props.title}</ListItemText>
         </Link>

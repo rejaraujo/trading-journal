@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@mui/material/styles";
-import { Box, Typography, List, ListItemText } from "@mui/material";
+import { Box } from "@mui/material";
 import { Colors } from "../theme";
 
 export const ActionListIem = styled(Box)(() => ({

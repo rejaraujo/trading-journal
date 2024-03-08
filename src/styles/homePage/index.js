@@ -25,7 +25,6 @@ export const MyBox = styled(Box)(({ theme }) => ({
     textAlign: "center",
   },
   [theme.breakpoints.down("sm")]: {
-    // padding: "26.8px 14px",
     margin: "0rem 1rem 0rem 1rem",
   },
 }));
@@ -36,19 +35,15 @@ export const MessageText = styled(Typography)(({ theme }) => ({
   fontSize: "42px",
   lineHeight: "56px",
   fontWeight: "bold",
-  marginTop: 0,
-  marginBottom: "0.5rem",
-  marginBlockStart: "0.83em",
-  marginBlockEnd: "0.83em",
-  color: Colors.dark,
+  marginBlockEnd: "4.5rem",
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
-    paddingLeft: "4rem",
+    textAlign: "center",
+    marginBlockEnd: "1.3rem",
   },
   [theme.breakpoints.down("sm")]: {
-    paddingLeft: "0.7rem",
-    fontSize: "30px",
-    lineHeight: "40px",
+    textAlign: "center",
+    marginBlockEnd: "1.3rem",
   },
 }));
 
@@ -75,6 +70,7 @@ export const Testimonial = styled(Typography)(({ theme }) => ({
 export const MyButton = styled(Button)(({ theme }) => ({
   fontSize: "20px",
   lineHeight: "20px",
+  width: "100%",
   padding: "26.8px 115px",
   borderRadius: "4px",
   letterSpacing: "0.64px",
@@ -84,17 +80,6 @@ export const MyButton = styled(Button)(({ theme }) => ({
   "&.MuiButton-root:hover": {
     color: Colors.light_grey,
     background: Colors.green,
-  },
-  [theme.breakpoints.down("md")]: {
-    width: 700,
-    marginLeft: "3.6rem",
-    marginRight: "3.6rem",
-  },
-
-  [theme.breakpoints.down("sm")]: {
-    padding: "26.8px 92px",
-    marginLeft: "0rem",
-    marginRight: "0rem",
   },
 }));
 

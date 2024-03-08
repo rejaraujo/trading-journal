@@ -1,7 +1,7 @@
 import HelpPage from "@/components/helpPage/helpPage";
 
 export const metadata = {
-  title: "Tradervue | Help",
+  title: "TradeTracker | Blog",
 };
 
 export default function Help() {

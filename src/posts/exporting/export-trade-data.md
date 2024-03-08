@@ -1,18 +1,11 @@
 ---
-title: Export Trade Data
-subtitle: Exporting your trading data from Tradervue
-date: January 17, 2023
+title: Trade Data Management
+subtitle: Exporting your trading data from TradeTracker
+date: May 17, 2023
 ---
 
-You can easily export your trading data from Tradervue for various purposes, such as creating backups, performing calculations in Excel, or any other data-related tasks. Follow these steps to export your data:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula leo ut velit scelerisque, nec congue ipsum faucibus. Curabitur vestibulum justo vel luctus ultricies. Integer gravida dui vel ligula laoreet, sed bibendum libero volutpat. Vivamus fermentum dolor eu ex efficitur, ac sollicitudin libero tempus. Nam in urna nec justo volutpat pharetra nec sed nulla. Phasellus sed magna id lacus lacinia blandit. Sed auctor lectus in ligula scelerisque, nec suscipit lorem pellentesque. Donec id ante ligula. Vivamus congue lorem nec libero finibus, id pulvinar leo condimentum. Suspendisse potenti. Nunc nec semper magna. Sed nec diam non ex congue facilisis a sed ligula. Aenean rutrum enim ac massa venenatis, at consequat mauris vulputate.
 
-1. Log in to your Tradervue account.
-2. Navigate to the "Trades View" section.
-3. In the bottom right corner of the columns, you will find a download icon. Click on it.
-4. Choose the location on your device where you want to save the exported data. Tradervue will generate a .CSV file for you.
+Sed non tristique dui. Nunc placerat nisi et risus sagittis, vitae eleifend mi ultrices. Mauris euismod, nisi et eleifend malesuada, ligula libero dapibus dolor, vitae ultricies nunc libero sit amet libero. Ut a arcu sit amet sem finibus condimentum vel eget est. Mauris tempus libero sed quam mattis, nec dignissim arcu placerat. In interdum ligula quis fermentum convallis. Integer luctus, lorem non pellentesque tincidunt, sapien enim pharetra velit, vitae vulputate magna mauris id dui. Vivamus nec turpis id lacus interdum tristique. Suspendisse potenti. Sed mattis consectetur tellus, id malesuada mi convallis nec. Suspendisse potenti. Maecenas ut sapien vitae velit consectetur suscipit.
 
-![images/data-exported](/images/data-exported.png)
-
-By clicking the download button, you will receive a CSV file that you can readily import into Excel or any other compatible software for further analysis.
-
-Please note that the export feature is available to all silver and gold subscribers.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ac eros ut velit ultricies ultrices. Nulla quis nisi ultricies, bibendum nunc eget, consequat velit. Vestibulum condimentum tellus et ex convallis, nec fringilla lorem dictum. Maecenas vel fermentum justo, eu vehicula orci. Cras auctor lobortis mauris, ut scelerisque quam ultricies sit amet. Morbi fermentum malesuada odio, nec vestibulum lectus consequat eu. Etiam et nunc sit amet lectus condimentum rhoncus. In ut nibh in felis efficitur pellentesque. Vivamus consectetur neque a mauris commodo, vitae tristique lectus luctus. Sed ut bibendum nisi. Curabitur at lacinia purus, non eleifend elit. In fringilla sapien felis, eget facilisis risus faucibus at. Nunc efficitur nisi quis est facilisis, nec vehicula mauris fermentum. Sed pharetra erat a leo tincidunt, vitae vestibulum leo efficitur. Sed pulvinar mauris nec tellus finibus, quis commodo eros volutpat. Sed sit amet tincidunt enim.

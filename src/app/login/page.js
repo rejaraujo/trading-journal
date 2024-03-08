@@ -3,7 +3,7 @@
 import Login from "@/components/login/login";
 
 export const metadata = {
-  title: "Tradervue | Login",
+  title: "TradeTracker | Login",
 };
 const LoginPage = () => {
   return (

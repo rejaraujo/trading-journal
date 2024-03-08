@@ -1,19 +1,11 @@
 ---
-title: Export Calendar P&L
-subtitle: Downloading your daily transaction and P&L
-date: January 17, 2023
+title: Calendar P&L
+subtitle: Downloading your daily transaction
+date: June 17, 2023
 ---
 
-You now have the capability to download your daily transaction and P&L data directly from the Calendar reports. Follow these steps to access and download your data:
+YLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vehicula leo ut velit scelerisque, nec congue ipsum faucibus. Curabitur vestibulum justo vel luctus ultricies. Integer gravida dui vel ligula laoreet, sed bibendum libero volutpat. Vivamus fermentum dolor eu ex efficitur, ac sollicitudin libero tempus. Nam in urna nec justo volutpat pharetra nec sed nulla. Phasellus sed magna id lacus lacinia blandit. Sed auctor lectus in ligula scelerisque, nec suscipit lorem pellentesque. Donec id ante ligula. Vivamus congue lorem nec libero finibus, id pulvinar leo condimentum. Suspendisse potenti. Nunc nec semper magna. Sed nec diam non ex congue facilisis a sed ligula. Aenean rutrum enim ac massa venenatis, at consequat mauris vulputate.
 
-1. Navigate to the Calendar report.
-2. Scroll to the bottom of the report, located below the month calendars.
-3. You'll find a download link.
+Sed non tristique dui. Nunc placerat nisi et risus sagittis, vitae eleifend mi ultrices. Mauris euismod, nisi et eleifend malesuada, ligula libero dapibus dolor, vitae ultricies nunc libero sit amet libero. Ut a arcu sit amet sem finibus condimentum vel eget est. Mauris tempus libero sed quam mattis, nec dignissim arcu placerat. In interdum ligula quis fermentum convallis. Integer luctus, lorem non pellentesque tincidunt, sapien enim pharetra velit, vitae vulputate magna mauris id dui. Vivamus nec turpis id lacus interdum tristique. Suspendisse potenti. Sed mattis consectetur tellus, id malesuada mi convallis nec. Suspendisse potenti. Maecenas ut sapien vitae velit consectetur suscipit.
 
-![images/export-calendar](/images/export-calendar.png)
-
-Set your preferred settings, such as Gross vs Net, $ vs Ticks vs R, and whether you want to aggregate or view averages. Once your settings are configured, click on the Download link.
-
-Your daily P&L data, customized with the settings you've chosen, will be downloaded as a CSV file. You can then open this file in software like Excel or any other compatible application for further analysis.
-
-Please note that report downloads and exports are available for all silver and gold subscribers.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ac eros ut velit ultricies ultrices. Nulla quis nisi ultricies, bibendum nunc eget, consequat velit. Vestibulum condimentum tellus et ex convallis, nec fringilla lorem dictum. Maecenas vel fermentum justo, eu vehicula orci. Cras auctor lobortis mauris, ut scelerisque quam ultricies sit amet. Morbi fermentum malesuada odio, nec vestibulum lectus consequat eu. Etiam et nunc sit amet lectus condimentum rhoncus. In ut nibh in felis efficitur pellentesque. Vivamus consectetur neque a mauris commodo, vitae tristique lectus luctus. Sed ut bibendum nisi. Curabitur at lacinia purus, non eleifend elit. In fringilla sapien felis, eget facilisis risus faucibus at. Nunc efficitur nisi quis est facilisis, nec vehicula mauris fermentum. Sed pharetra erat a leo tincidunt, vitae vestibulum leo efficitur. Sed pulvinar mauris nec tellus finibus, quis commodo eros volutpat. Sed sit amet tincidunt enim.

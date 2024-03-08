@@ -2,7 +2,7 @@ import { BannerText, BannerTitle } from "@/styles/homePage";
 import { Grid } from "@mui/material";
 
 export const metadata = {
-  title: "Tradervue | Community",
+  title: "TradeTracker | Community",
 };
 
 export default function Coommunity() {

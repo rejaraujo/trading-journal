@@ -16,7 +16,7 @@ import { Colors } from "@/styles/theme";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "next/link";
 
-const Login = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -44,8 +44,10 @@ const Login = () => {
               borderRadius: "5px",
               p: "1rem",
             }}>
-            <Typography variant="h5" sx={{ fontWeight: "bold", pl: "1rem" }}>
-              Sign in to TradeTracker
+            <Typography
+              variant="h5"
+              sx={{ textAlign: "center", fontWeight: "bold", pl: "1rem" }}>
+              Join TradeTracker!
             </Typography>
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
             <form style={{ padding: "1rem" }}>
@@ -65,7 +67,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={
                   <Checkbox
                     checked={rememberMe}
@@ -74,40 +76,39 @@ const Login = () => {
                   />
                 }
                 label="Remember Me"
-              />
+              /> */}
               <Box>
                 <Button
                   variant="outlined"
                   color="primary"
                   onClick={handleLogin}
                   sx={{ mt: "1rem", textTransform: "none" }}>
-                  Login
+                  Sign Up
                 </Button>
               </Box>
 
-              <Box sx={{ mt: "1rem" }}>
-                <Typography variant="p">
-                  <Link
-                    href="/trading-firms"
-                    style={{
-                      color: Colors.green,
-                      fontWeight: "bold",
-                    }}>
-                    Forgot your password?
-                  </Link>
+              <Box sx={{ mt: "2rem" }}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    color: Colors.green,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}>
+                  Welcome Trackers!
                 </Typography>
                 <Box sx={{ mt: "1rem" }}>
-                  <Typography variant="p">
+                  {/* <Typography variant="p">
                     New user?{" "}
                     <Link
-                      href="/membership"
+                      href="/pricing"
                       style={{
                         color: Colors.green,
                         fontWeight: "bold",
                       }}>
                       Sign up here.
                     </Link>
-                  </Typography>
+                  </Typography> */}
                 </Box>
               </Box>
             </form>
@@ -118,4 +119,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
