@@ -28,11 +28,25 @@ export default function HelpPageAppDrawer() {
       )}
       {/*  */}
       <Drawer open={drawerOpen}>
-        <List>
+        <List style={{ marginTop: "12px" }}>
           <ListItemButton>
-            <Link href="/">HOME</Link>
+            <Link
+              href="/"
+              style={{
+                fontSize: "18px",
+                letterSpacing: "0.64px",
+                fontWeight: "bold",
+              }}>
+              HOME
+            </Link>
           </ListItemButton>
-          <ListItemButton onClick={() => dispatch(setShowContactBox(true))}>
+          <ListItemButton
+            onClick={() => dispatch(setShowContactBox(true))}
+            style={{
+              fontSize: "18px",
+              letterSpacing: "0.64px",
+              fontWeight: "bold",
+            }}>
             CONTACT
           </ListItemButton>
           {/* <Actions /> */}

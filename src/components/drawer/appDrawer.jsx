@@ -1,11 +1,13 @@
 "use client";
 
-import { Drawer, List, ListItemButton, ListItemText, Box } from "@mui/material";
+import { Drawer, List, ListItemText, ListItemButton } from "@mui/material";
 import { DrawerCloseButton } from "@/styles/drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
 // import { Actions } from "../../app";
+import { Colors } from "../../styles/theme";
+import Link from "next/link";
 
 export default function AppDrawer() {
   const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
@@ -24,29 +26,90 @@ export default function AppDrawer() {
       )}
       {/*  */}
       <Drawer open={drawerOpen}>
-        <List>
+        <List style={{ marginTop: "12px" }}>
           <ListItemButton>
-            <ListItemText>FEATURES</ListItemText>
+            <ListItemText>
+              <Link
+                href="/membership"
+                style={{
+                  fontSize: "18px",
+                  letterSpacing: "0.64px",
+                  fontWeight: "bold",
+                }}>
+                MEMBERSHIP
+              </Link>
+            </ListItemText>
           </ListItemButton>
           <ListItemButton>
-            <ListItemText>Journal Features</ListItemText>
+            <ListItemText>
+              <Link
+                href="/help"
+                style={{
+                  fontSize: "18px",
+                  letterSpacing: "0.64px",
+                  fontWeight: "bold",
+                }}>
+                BLOG
+              </Link>
+            </ListItemText>
           </ListItemButton>
-          <ListItemButton>
-            <ListItemText>Analytical Features</ListItemText>
+        </List>
+
+        <List type="row" style={{}}>
+          <ListItemButton
+            variant="contained"
+            disableTouchRipple
+            sx={{
+              justifyContent: "center",
+              "&.MuiListItemButton-root:hover": {
+                color: Colors.light_grey,
+                background: "transparent",
+              },
+            }}>
+            <Link
+              href="/login"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontWeight: "bold",
+                background: Colors.green,
+                borderRadius: "4px",
+                letterSpacing: "0.64px",
+                fontWeight: "bold",
+                // padding: "5px 72px",
+                width: "100%",
+                fontSize: "18px",
+              }}>
+              LOG IN
+            </Link>
           </ListItemButton>
-          <ListItemButton>
-            <ListItemText>Sharing Features</ListItemText>
+
+          <ListItemButton
+            variant="contained"
+            disableTouchRipple
+            sx={{
+              justifyContent: "center",
+              "&.MuiListItemButton-root:hover": {
+                color: Colors.light_grey,
+                background: "transparent",
+              },
+            }}>
+            <Link
+              href="/membership"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontWeight: "bold",
+                background: Colors.green,
+                borderRadius: "4px",
+                letterSpacing: "0.64px",
+                fontWeight: "bold",
+                width: "100%",
+                fontSize: "18px",
+              }}>
+              SIGN UP
+            </Link>
           </ListItemButton>
-          <ListItemButton>
-            <ListItemText>PRICING</ListItemText>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText>COMMUNITY</ListItemText>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText>HELP</ListItemText>
-          </ListItemButton>
-          {/* <Actions /> */}
         </List>
       </Drawer>
     </>
