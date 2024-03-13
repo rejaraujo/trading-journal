@@ -5,24 +5,24 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import {
-  Box,
-  Divider,
-  FormControlLabel,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Colors } from "@/styles/theme";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "next/link";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleLogin = () => {
-    // Handle login logic here
+  console.log("Username or Email:", email);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email && !password) {
+      setError("All fields are necessary");
+      return;
+    }
   };
 
   return (
@@ -36,12 +36,10 @@ const SignUp = () => {
         sx={{ minHeight: "90vh" }}>
         <Grid item xs={3}>
           <Box
-            width={370}
-            height={450}
             sx={{
               background: Colors.light_grey,
               border: "1px solid green",
-              borderRadius: "5px",
+              borderRadius: "4px",
               p: "1rem",
             }}>
             <Typography
@@ -50,9 +48,17 @@ const SignUp = () => {
               Join TradeTracker!
             </Typography>
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
-            <form style={{ padding: "1rem" }}>
+            <form onSubmit={handleSubmit} style={{ padding: "1rem" }}>
               <TextField
-                label="Username or Email"
+                label=" Name"
+                type="text"
+                fullWidth
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                margin="normal"
+              />
+              <TextField
+                label="Email"
                 type="email"
                 fullWidth
                 value={email}
@@ -67,50 +73,29 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
               />
-              {/* <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
-                    color="primary"
-                  />
-                }
-                label="Remember Me"
-              /> */}
-              <Box>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  onClick={handleLogin}
-                  sx={{ mt: "1rem", textTransform: "none" }}>
-                  Sign Up
-                </Button>
+              <Button
+                variant="outlined"
+                color="primary"
+                type="submit"
+                sx={{ mt: "1rem", textTransform: "none" }}>
+                Sign Up
+              </Button>
+              <Box marginTop={"2rem"} style={{ color: "red" }}>
+                {error && <Typography>{error}</Typography>}
               </Box>
-
-              <Box sx={{ mt: "2rem" }}>
-                <Typography
-                  variant="h5"
-                  style={{
-                    color: Colors.green,
-                    fontWeight: "bold",
-                    textAlign: "center",
-                  }}>
-                  Welcome Trackers!
-                </Typography>
-                <Box sx={{ mt: "1rem" }}>
-                  {/* <Typography variant="p">
-                    New user?{" "}
-                    <Link
-                      href="/pricing"
-                      style={{
-                        color: Colors.green,
-                        fontWeight: "bold",
-                      }}>
-                      Sign up here.
-                    </Link>
-                  </Typography> */}
-                </Box>
-              </Box>
+              <Typography variant="h6" sx={{ textAlign: "center" }}>
+                Already have an account?{" "}
+                <Link href={"/login"}>
+                  <span
+                    style={{
+                      color: Colors.green,
+                      fontWeight: "bold",
+                    }}>
+                    Log In
+                  </span>
+                </Link>
+              </Typography>
+              <Divider variant="middle" sx={{ pt: "0.6rem" }} />
             </form>
           </Box>
         </Grid>
