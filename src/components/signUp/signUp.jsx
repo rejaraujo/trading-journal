@@ -17,11 +17,32 @@ const SignUp = () => {
 
   console.log("Username or Email:", email);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
     if (!email && !password) {
       setError("All fields are necessary");
       return;
+    }
+
+    try {
+      const response = await fetch("api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+
+      if (response.ok) {
+        const form = e.target;
+        form.reset();
+      } else {
+        console.log("User registration failed");
+      }
+    } catch (error) {
+      console.log("Error during registration:", error);
     }
   };
 
@@ -50,7 +71,7 @@ const SignUp = () => {
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
             <form onSubmit={handleSubmit} style={{ padding: "1rem" }}>
               <TextField
-                label=" Name"
+                label=" Fulll Name"
                 type="text"
                 fullWidth
                 value={name}
