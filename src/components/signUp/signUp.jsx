@@ -15,11 +15,11 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  console.log("Username or Email:", email);
+  // console.log("Username or Email:", email);
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    if (!email && !password) {
+    e.preventDefault();
+    if (!name || (!email && !password)) {
       setError("All fields are necessary");
       return;
     }
