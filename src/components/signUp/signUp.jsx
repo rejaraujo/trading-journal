@@ -9,18 +9,27 @@ import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Colors } from "@/styles/theme";
 import Link from "next/link";
 
+//Define the isValidEmail()
+function isValidEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // console.log("Username or Email:", email);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || (!email && !password)) {
+    if (!name || !email || !password) {
       setError("All fields are necessary");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setError("Invalid email");
       return;
     }
 
@@ -38,11 +47,15 @@ const SignUp = () => {
       if (response.ok) {
         const form = e.target;
         form.reset();
+        setError("");
       } else {
-        console.log("User registration failed");
+        const data = await response.json();
+        setError(data.message);
+        // console.log("User registration failed");
       }
     } catch (error) {
       console.log("Error during registration:", error);
+      setError("An error occured while registering the user");
     }
   };
 
@@ -85,6 +98,11 @@ const SignUp = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 margin="normal"
+                helperText={
+                  !isValidEmail(email)
+                    ? "Ensure your email follows the format name@exmaple.com"
+                    : ""
+                }
               />
               <TextField
                 label="Password"

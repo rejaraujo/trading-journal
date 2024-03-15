@@ -1,13 +1,32 @@
 import { NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 
+//Define the isValidEmail()
+function isValidEmail(email) {
+  // Regular expression pattern for validating email addresses
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Check if the email matches the pattern
+  return emailPattern.test(email);
+}
+
 export async function POST(req) {
   try {
     const { name, email, password } = await req.json();
 
-    // Accessing the PostgreSQL database and checking if the email already exists
-    let users = await sql`SELECT * from users where email=${email}`;
-    if (users.rowCount > 0)
+    //Validate email format
+    if (!isValidEmail(email)) {
+      return NextResponse(
+        {
+          message: "Invalid email format.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // Accessing the PostgreSQL database and checking if the email/user already exists
+    let existingUser = await sql`SELECT * from users where email=${email}`;
+    if (existingUser.rowCount > 0)
       return NextResponse.json(
         {
           message: "Email already registered for another user.",
