@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Colors } from "@/styles/theme";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 //Define the isValidEmail()
 function isValidEmail(email) {
@@ -16,6 +17,7 @@ function isValidEmail(email) {
 }
 
 const SignUp = () => {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,10 +50,10 @@ const SignUp = () => {
         const form = e.target;
         form.reset();
         setError("");
+        router.push("/");
       } else {
         const data = await response.json();
         setError(data.message);
-        // console.log("User registration failed");
       }
     } catch (error) {
       console.log("Error during registration:", error);
