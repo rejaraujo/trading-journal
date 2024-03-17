@@ -6,7 +6,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import icon from "@mui/icons-material/ChevronRight";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
 const drawerWidth = 260;
@@ -19,32 +18,12 @@ const links = [
     href: "/help/articles/exporting",
     icon: iconImage,
   },
-  {
-    text: "Fundamental Analysis",
-    href: "/1",
-    icon: iconImage,
-  },
-  {
-    text: "Technical Analysis",
-    href: "/2",
-    icon: iconImage,
-  },
-  {
-    text: "Trading Psychology",
-    href: "/3",
-    icon: iconImage,
-  },
-  {
-    text: "Trading Psychology",
-    href: "/4",
-    icon: iconImage,
-  },
 ];
 
 export default function RootLayout({ children }) {
   return (
     <>
-      <section style={{ paddingBottom: "2rem" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", minHeight: "50vh" }}>
         <Box sx={{ display: "flex" }}>
           <Drawer
             variant="permanent"
@@ -83,7 +62,7 @@ export default function RootLayout({ children }) {
             {children}
           </Box>
         </Box>
-      </section>
+      </Box>
     </>
   );
 }

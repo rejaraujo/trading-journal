@@ -28,6 +28,7 @@ export default function Footer() {
         // marginTop: "4rem",
         position: "relative",
         zIndex: 2,
+        bottom: 0,
       }}>
       <Grid item container spacing={2} justifyContent="center" lg={12}>
         <Grid item md={6} lg={4}>

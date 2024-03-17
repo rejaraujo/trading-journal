@@ -17,6 +17,7 @@ function isValidEmail(email) {
 }
 
 const SignUp = () => {
+  //State management with Redux Toolkit will be implemented later
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -50,7 +51,7 @@ const SignUp = () => {
         const form = e.target;
         form.reset();
         setError("");
-        router.push("/");
+        router.push("/dashboard");
       } else {
         const data = await response.json();
         setError(data.message);
