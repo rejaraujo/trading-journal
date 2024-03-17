@@ -8,17 +8,15 @@ import Link from "next/link";
 // import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
 
 export default function AppbarDesktop({}) {
+  //clean-up here and the slices
   // const { anchorEl } = useAppSelector((state) => state.anchorEl);
   // const dispatch = useAppDispatch();
-
   // const handleClick = (event) => {
   //   dispatch(setAnchorEl(event.currentTarget));
   // };
-
   // const handleClose = () => {
   //   dispatch(setAnchorEl(null));
   // };
-
   // const open = Boolean(anchorEl);
   return (
     <>

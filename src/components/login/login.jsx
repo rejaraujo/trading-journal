@@ -15,14 +15,43 @@ import {
 import { Colors } from "@/styles/theme";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  const handleLogin = () => {
-    // Handle login logic here
+  //handling submission
+  const handleLogin = async () => {
+    try {
+      //authentication logic
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          rememberMe,
+        }),
+      });
+
+      if (response.ok) {
+        router.push("/dashboard"); // if login sucessed, redirect to dashboard
+      } else {
+        if (response.status === 401) {
+          console.error("Authentication failed: Invalid crendentials");
+        } else {
+          console.error("Autnethication failed:", response.statusText);
+          alert("An error occurred during login. Please try again later");
+        }
+      }
+    } catch (error) {
+      console.error("Error during login", error);
+    }
   };
 
   return (
