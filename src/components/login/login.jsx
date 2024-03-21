@@ -21,7 +21,7 @@ const Login = () => {
       const result = await signIn("credentials", {
         email,
         password,
-        redirect: true,
+        redirect: false,
         callbackUrl: "/dashboard",
       });
       // Handle successful login, e.g., redirect to dashboard
