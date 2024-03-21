@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Grid, Typography, Paper } from "@mui/material";
-import { useSession } from "next-auth/react"; //get user detail
+import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
   const { data: session } = useSession();
@@ -12,7 +12,10 @@ const Dashboard = () => {
         <Grid item xs={12}>
           <Paper>
             <Typography variant="h4" gutterBottom>
-              {`Welcome to your session ${session?.user?.name}`}
+              Dashboard
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              <span>{`Welcome ${session?.user?.name}`}</span>
             </Typography>
           </Paper>
         </Grid>

@@ -25,9 +25,11 @@ export default function RootLayout({ children }) {
           <ReduxProvider>
             <ThemeRegistry options={{ key: "mui" }}>
               <CssBaseline />
-              <NavBar suppressHydrationWarning />
+              {/* <NavBar suppressHydrationWarning /> */}
+              <NavBar />
               {children}
-              <Footer suppressHydrationWarning />
+              {/* <Footer suppressHydrationWarning /> */}
+              <Footer />
             </ThemeRegistry>
           </ReduxProvider>
         </AuthProvider>

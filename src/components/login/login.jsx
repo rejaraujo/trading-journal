@@ -13,10 +13,12 @@ const Login = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
 
   //handling submission
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
       const result = await signIn("credentials", {
         email,
@@ -24,11 +26,16 @@ const Login = () => {
         redirect: false,
         callbackUrl: "/dashboard",
       });
-      // Handle successful login, e.g., redirect to dashboard
-      router.push("/dashboard");
+
+      if (result.error) {
+        setError("Invalid Credentials");
+        return;
+      }
+
+      router.replace("/dashboard");
     } catch (error) {
-      // Handle login error
       console.error("Login failed:", error);
+      setError("Login failed. Please try again.");
     }
   };
 
@@ -91,18 +98,10 @@ const Login = () => {
                   Login
                 </Button>
               </Box>
-
+              <Box marginTop={"2rem"} style={{ color: "red" }}>
+                {error && <Typography>{error}</Typography>}
+              </Box>
               <Box sx={{ mt: "1rem" }}>
-                {/* <Typography variant="p">
-                  <Link
-                    href="/trading-firms"
-                    style={{
-                      color: Colors.green,
-                      fontWeight: "bold",
-                    }}>
-                    Forgot your password?
-                  </Link>
-                </Typography> */}
                 <Box sx={{ mt: "1rem" }}>
                   <Typography variant="p">
                     New user?{" "}

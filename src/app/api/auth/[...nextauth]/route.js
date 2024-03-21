@@ -1,34 +1,34 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { authenticateUser } from "../../../../../lib/postgres";
-// import { sql } from "@vercel/postgres";
+// import { authenticateUser } from "../../../../../lib/postgres";
+import { sql } from "@vercel/postgres";
 
-// async function authenticateUser(email, password) {
-//   try {
-//     const result =
-//       await sql`SELECT password_hash, name FROM users WHERE email = ${email}`;
+async function authenticateUser(email, password) {
+  try {
+    const result =
+      await sql`SELECT password_hash, name FROM users WHERE email = ${email}`;
 
-//     const user = result.rows[0];
+    const user = result.rows[0];
 
-//     if (!user) {
-//       return { error: "User not found" };
-//     }
+    if (!user) {
+      return { error: "User not found" };
+    }
 
-//     const { password_hash, name } = user;
+    const { password_hash, name } = user;
 
-//     const userTypedHashedPassword =
-//       await sql`SELECT crypt(${password}, ${password_hash}) AS hashed_password`;
+    const userTypedHashedPassword =
+      await sql`SELECT crypt(${password}, ${password_hash}) AS hashed_password`;
 
-//     if (userTypedHashedPassword.rows[0]?.hashed_password === password_hash) {
-//       return { email, name }; // Include name in the return object
-//     } else {
-//       return { error: "Incorrect Credentials" };
-//     }
-//   } catch (error) {
-//     console.error("Error authenticating user:", error.message);
-//     throw error;
-//   }
-// }
+    if (userTypedHashedPassword.rows[0]?.hashed_password === password_hash) {
+      return { email, name }; // Include name in the return object
+    } else {
+      return { error: "Incorrect Credentials" };
+    }
+  } catch (error) {
+    console.error("Error authenticating user:", error.message);
+    throw error;
+  }
+}
 
 export const authOptions = {
   providers: [
