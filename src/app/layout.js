@@ -4,6 +4,7 @@ import { ReduxProvider } from "../redux/provider";
 import ThemeRegistry from "./ThemeRegistry";
 import { Footer, NavBar } from ".";
 import { CssBaseline } from "@mui/material";
+import { AuthProvider } from "./Providers";
 
 // instantiate the Work_Sans object by providing the subsets.
 const workSans = Work_Sans({
@@ -20,14 +21,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={workSans.className}>
-        <ReduxProvider>
-          <ThemeRegistry options={{ key: "mui" }}>
-            <CssBaseline />
-            <NavBar />
-            {children}
-            <Footer />
-          </ThemeRegistry>
-        </ReduxProvider>
+        <AuthProvider>
+          <ReduxProvider>
+            <ThemeRegistry options={{ key: "mui" }}>
+              <CssBaseline />
+              <NavBar />
+              {children}
+              <Footer />
+            </ThemeRegistry>
+          </ReduxProvider>
+        </AuthProvider>
       </body>
     </html>
   );

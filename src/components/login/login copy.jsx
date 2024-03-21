@@ -1,34 +1,56 @@
+// components/Login.js
+
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
-import { Box, Divider, Grid, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import {
+  Box,
+  Divider,
+  FormControlLabel,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { Colors } from "@/styles/theme";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   //handling submission
-  const handleSubmit = async () => {
+  const handleLogin = async () => {
     try {
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: true,
-        callbackUrl: "/dashboard",
+      //authentication logic
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          rememberMe,
+        }),
       });
-      // Handle successful login, e.g., redirect to dashboard
-      router.push("/dashboard");
+
+      if (response.ok) {
+        router.push("/dashboard"); // if login sucessed, redirect to dashboard
+      } else {
+        if (response.status === 401) {
+          console.error("Authentication failed: Invalid crendentials");
+        } else {
+          console.error("Autnethication failed:", response.statusText);
+          alert("An error occurred during login. Please try again later");
+        }
+      }
     } catch (error) {
-      // Handle login error
-      console.error("Login failed:", error);
+      console.error("Error during login", error);
     }
   };
 
@@ -43,8 +65,8 @@ const Login = () => {
         sx={{ minHeight: "90vh" }}>
         <Grid item xs={3}>
           <Box
-            // width={370}
-            // height={450}
+            width={370}
+            height={450}
             sx={{
               background: Colors.light_grey,
               border: "1px solid green",
@@ -55,9 +77,9 @@ const Login = () => {
               Sign in to TradeTracker
             </Typography>
             <Divider variant="middle" sx={{ pt: "0.6rem" }} />
-            <form onSubmit={handleSubmit} style={{ padding: "1rem" }}>
+            <form style={{ padding: "1rem" }}>
               <TextField
-                label="Email"
+                label="Username or Email"
                 type="email"
                 fullWidth
                 value={email}
@@ -72,7 +94,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
               />
-              {/* <FormControlLabel
+              <FormControlLabel
                 control={
                   <Checkbox
                     checked={rememberMe}
@@ -81,19 +103,19 @@ const Login = () => {
                   />
                 }
                 label="Remember Me"
-              /> */}
+              />
               <Box>
                 <Button
                   variant="outlined"
                   color="primary"
-                  onClick={handleSubmit}
+                  onClick={handleLogin}
                   sx={{ mt: "1rem", textTransform: "none" }}>
                   Login
                 </Button>
               </Box>
 
               <Box sx={{ mt: "1rem" }}>
-                {/* <Typography variant="p">
+                <Typography variant="p">
                   <Link
                     href="/trading-firms"
                     style={{
@@ -102,7 +124,7 @@ const Login = () => {
                     }}>
                     Forgot your password?
                   </Link>
-                </Typography> */}
+                </Typography>
                 <Box sx={{ mt: "1rem" }}>
                   <Typography variant="p">
                     New user?{" "}
