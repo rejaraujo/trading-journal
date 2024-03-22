@@ -50,8 +50,6 @@ const Login = () => {
         sx={{ minHeight: "90vh" }}>
         <Grid item xs={3}>
           <Box
-            // width={370}
-            // height={450}
             sx={{
               background: Colors.light_grey,
               border: "1px solid green",
@@ -79,16 +77,6 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
               />
-              {/* <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
-                    color="primary"
-                  />
-                }
-                label="Remember Me"
-              /> */}
               <Box>
                 <Button
                   variant="outlined"

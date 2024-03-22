@@ -9,11 +9,14 @@ import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
 import { setShowContactBox } from "@/redux/features/contactBox/contactBoxSlice";
 import Link from "next/link";
 import ContactBox from "@/components/helpPage/contactDrawer";
-// import { Actions } from "../../app";
+import { useSession } from "next-auth/react";
+import LoginButton from "../appbar/loginButton";
+import { Colors } from "@/styles/theme";
 
 export default function HelpPageAppDrawer() {
   const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
   const dispatch = useAppDispatch();
+  const { data: session } = useSession();
 
   return (
     <>
@@ -22,6 +25,10 @@ export default function HelpPageAppDrawer() {
           <CloseIcon
             sx={{
               fontSize: "2rem",
+              background: Colors.primary,
+              position: "absolute",
+              left: 150,
+              top: 5,
             }}
           />
         </DrawerCloseButton>
@@ -51,6 +58,7 @@ export default function HelpPageAppDrawer() {
           </ListItemButton>
           {/* <Actions /> */}
         </List>
+        <LoginButton session={session} />
       </Drawer>
       <ContactBox />
     </>

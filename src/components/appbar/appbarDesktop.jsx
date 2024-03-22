@@ -4,20 +4,13 @@ import { AppbarContainer, AppbarHeader, MyList } from "@/styles/appbar";
 import { ListItemButton } from "@mui/material";
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
+import LoginButton from "./loginButton";
 // import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 // import { setAnchorEl } from "@/redux/features/anchorEl/anchorSlice";
+import { useSession } from "next-auth/react";
 
 export default function AppbarDesktop({}) {
-  //clean-up here and the slices
-  // const { anchorEl } = useAppSelector((state) => state.anchorEl);
-  // const dispatch = useAppDispatch();
-  // const handleClick = (event) => {
-  //   dispatch(setAnchorEl(event.currentTarget));
-  // };
-  // const handleClose = () => {
-  //   dispatch(setAnchorEl(null));
-  // };
-  // const open = Boolean(anchorEl);
+  const { data: session } = useSession();
   return (
     <>
       <AppbarContainer
@@ -83,58 +76,7 @@ export default function AppbarDesktop({}) {
           </ListItemButton>
 
           {/* LOGIN IN */}
-          <MyList type="row" sx={{ flexGrow: "0" }}>
-            <ListItemButton
-              variant="contained"
-              disableTouchRipple
-              sx={{
-                justifyContent: "center",
-                "&.MuiListItemButton-root:hover": {
-                  color: Colors.green,
-                  background: "transparent",
-                },
-              }}>
-              <Link
-                href="/login"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  fontWeight: "bold",
-                  borderRadius: "4px",
-                  letterSpacing: "0.64px",
-                  fontSize: "18px",
-                }}>
-                LOG IN
-              </Link>
-            </ListItemButton>
-            {/* SIGN UP */}
-            <ListItemButton
-              variant="contained"
-              disableTouchRipple
-              sx={{
-                justifyContent: "center",
-                "&.MuiListItemButton-root:hover": {
-                  color: Colors.light_grey,
-                  background: "transparent",
-                },
-              }}>
-              <Link
-                href="/membership"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  fontWeight: "bold",
-                  background: Colors.green,
-                  borderRadius: "4px",
-                  letterSpacing: "0.64px",
-                  fontWeight: "bold",
-                  padding: "16px 48px",
-                  fontSize: "18px",
-                }}>
-                SIGN UP
-              </Link>
-            </ListItemButton>
-          </MyList>
+          <LoginButton session={session} />
         </MyList>
       </AppbarContainer>
     </>
