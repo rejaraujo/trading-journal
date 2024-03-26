@@ -51,7 +51,7 @@ const SignUp = () => {
         const form = e.target;
         form.reset();
         setError("");
-        router.push("/dashboard");
+        router.push("/login");
       } else {
         const data = await response.json();
         setError(data.message);
