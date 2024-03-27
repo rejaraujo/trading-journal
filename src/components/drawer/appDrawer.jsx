@@ -1,21 +1,30 @@
 "use client";
 
-import { Drawer, List, ListItemText, ListItemButton } from "@mui/material";
-import { DrawerCloseButton } from "@/styles/drawer";
-import CloseIcon from "@mui/icons-material/Close";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
-import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import LoginButton from "../appbar/loginButton";
+import { Drawer } from "@mui/material";
+import { DrawerCloseButton } from "@/styles/drawer";
+import CloseIcon from "@mui/icons-material/Close";
+import {
+  AppbarContainer,
+  AppbarHeader,
+  MyList,
+  NavListItem,
+} from "@/styles/appbar";
 import { Colors } from "@/styles/theme";
 
 export default function AppDrawer() {
   const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
   const dispatch = useAppDispatch();
   const { data: session } = useSession();
+  const router = useRouter();
 
+  const handleButtonClick = (route) => {
+    router.push(route);
+  };
   return (
     <>
       {drawerOpen && (
@@ -33,35 +42,21 @@ export default function AppDrawer() {
       )}
       {/*  */}
       <Drawer open={drawerOpen}>
-        <List style={{ marginTop: "12px" }}>
-          <ListItemButton>
-            <ListItemText>
-              <Link
-                href="/membership"
-                style={{
-                  fontSize: "18px",
-                  letterSpacing: "0.64px",
-                  fontWeight: "bold",
-                }}>
+        <AppbarContainer>
+          <AppbarHeader>
+            <MyList style={{ marginTop: "12px" }}>
+              <NavListItem onClick={() => handleButtonClick("/membership")}>
                 MEMBERSHIP
-              </Link>
-            </ListItemText>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText>
-              <Link
-                href="/help"
-                style={{
-                  fontSize: "18px",
-                  letterSpacing: "0.64px",
-                  fontWeight: "bold",
-                }}>
+              </NavListItem>
+              <NavListItem
+                sx={{ marginBottom: "2rem" }}
+                onClick={() => handleButtonClick("/help")}>
                 BLOG
-              </Link>
-            </ListItemText>
-          </ListItemButton>
-          <LoginButton session={session} />
-        </List>
+              </NavListItem>
+              <LoginButton session={session} />
+            </MyList>
+          </AppbarHeader>
+        </AppbarContainer>
       </Drawer>
     </>
   );

@@ -14,9 +14,6 @@ export default function NavBar() {
   const theme = useTheme();
 
   const pathname = usePathname();
-  // useEffect(() => {
-  //   // Do something here...
-  // }, [pathname]);
 
   // if it is true it will be on Desktop otherwise Mobile.
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -33,7 +30,6 @@ export default function NavBar() {
             </>
           ) : (
             <HelpPageAppbarDesktop />
-            // <HelpAppbarDesktop matches={matches} />
           )
         ) : matches ? (
           <>
@@ -45,22 +41,6 @@ export default function NavBar() {
             <AppbarDesktop matches={matches} />
           </>
         )}
-
-        {/* If isHelpPage{
-            if matches{
-              HelpAppbarMobile
-            }
-            else{
-              HelpAppbarDesktop
-            }
-          else
-            if matches{
-              AppbarMobile
-            }
-            else{
-              AppbarDesktop
-            }
-        } */}
       </div>
     </>
   );
