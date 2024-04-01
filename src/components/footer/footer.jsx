@@ -6,9 +6,6 @@ import { Colors } from "../../styles/theme";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Image from "next/image";
-// import LogoFooter from "../../../public/images/logoFooter.jpg";
-import logotransparent from "../../../public/images/logotransparent.png";
 import Link from "next/link";
 
 export default function Footer() {
