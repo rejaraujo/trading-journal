@@ -1,5 +1,5 @@
 import getPostMetadata from "@/components/getPostMetadata";
-import PostPreview from "@/components/postPreview";
+import PostPreview from "@/posts/postPreview";
 
 export default function PostsCharts() {
   const folder = "help/articles";
