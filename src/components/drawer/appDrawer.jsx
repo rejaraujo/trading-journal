@@ -1,18 +1,30 @@
 "use client";
 
-import { Drawer, List, ListItemText, ListItemButton } from "@mui/material";
-import { DrawerCloseButton } from "@/styles/drawer";
-import CloseIcon from "@mui/icons-material/Close";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "@/redux/features/drawer/drawerSlice";
-// import { Actions } from "../../app";
-import { Colors } from "../../styles/theme";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import LoginButton from "../appbar/loginButton";
+import { Drawer } from "@mui/material";
+import { DrawerCloseButton } from "@/styles/drawer";
+import CloseIcon from "@mui/icons-material/Close";
+import {
+  AppbarContainer,
+  AppbarHeader,
+  MyList,
+  NavListItem,
+} from "@/styles/appbar";
+import { Colors } from "@/styles/theme";
 
 export default function AppDrawer() {
   const { drawerOpen } = useAppSelector((state) => state.drawerOpen);
   const dispatch = useAppDispatch();
+  const { data: session } = useSession();
+  const router = useRouter();
 
+  const handleButtonClick = (route) => {
+    router.push(route);
+  };
   return (
     <>
       {drawerOpen && (
@@ -20,97 +32,31 @@ export default function AppDrawer() {
           <CloseIcon
             sx={{
               fontSize: "2rem",
+              background: Colors.primary,
+              position: "absolute",
+              left: 150,
+              top: 1,
             }}
           />
         </DrawerCloseButton>
       )}
       {/*  */}
       <Drawer open={drawerOpen}>
-        <List style={{ marginTop: "12px" }}>
-          <ListItemButton>
-            <ListItemText>
-              <Link
-                href="/membership"
-                style={{
-                  fontSize: "18px",
-                  letterSpacing: "0.64px",
-                  fontWeight: "bold",
-                }}>
+        <AppbarContainer>
+          <AppbarHeader>
+            <MyList style={{ marginTop: "12px" }}>
+              <NavListItem onClick={() => handleButtonClick("/membership")}>
                 MEMBERSHIP
-              </Link>
-            </ListItemText>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText>
-              <Link
-                href="/help"
-                style={{
-                  fontSize: "18px",
-                  letterSpacing: "0.64px",
-                  fontWeight: "bold",
-                }}>
+              </NavListItem>
+              <NavListItem
+                sx={{ marginBottom: "2rem" }}
+                onClick={() => handleButtonClick("/help")}>
                 BLOG
-              </Link>
-            </ListItemText>
-          </ListItemButton>
-        </List>
-
-        <List type="row" style={{}}>
-          <ListItemButton
-            variant="contained"
-            disableTouchRipple
-            sx={{
-              justifyContent: "center",
-              "&.MuiListItemButton-root:hover": {
-                color: Colors.light_grey,
-                background: "transparent",
-              },
-            }}>
-            <Link
-              href="/login"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                fontWeight: "bold",
-                background: Colors.green,
-                borderRadius: "4px",
-                letterSpacing: "0.64px",
-                fontWeight: "bold",
-                // padding: "5px 72px",
-                width: "100%",
-                fontSize: "18px",
-              }}>
-              LOG IN
-            </Link>
-          </ListItemButton>
-
-          <ListItemButton
-            variant="contained"
-            disableTouchRipple
-            sx={{
-              justifyContent: "center",
-              "&.MuiListItemButton-root:hover": {
-                color: Colors.light_grey,
-                background: "transparent",
-              },
-            }}>
-            <Link
-              href="/membership"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                fontWeight: "bold",
-                background: Colors.green,
-                borderRadius: "4px",
-                letterSpacing: "0.64px",
-                fontWeight: "bold",
-                width: "100%",
-                fontSize: "18px",
-              }}>
-              SIGN UP
-            </Link>
-          </ListItemButton>
-        </List>
+              </NavListItem>
+              <LoginButton session={session} />
+            </MyList>
+          </AppbarHeader>
+        </AppbarContainer>
       </Drawer>
     </>
   );

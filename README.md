@@ -1,4 +1,4 @@
-# FrontEnd Trading Journal Project
+# Trading Journal Project
 
 Welcome to the Trading Journal web application! This project was initialized using both `Create React App` and `Next.js`, leveraging the capabilities of Redux and the convenience of Redux Toolkit. Additionally, it incorporates the Material-UI library for designing user interfaces. Inspired by the tools used by trading experts, this project aims to provide traders with a comprehensive platform to track their trades, analyze performance, and make informed decisions.
 

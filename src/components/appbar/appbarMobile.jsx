@@ -1,4 +1,5 @@
 "use client";
+
 import { useAppDispatch } from "@/redux/hooks";
 import { setDrawerOpen } from "../../redux/features/drawer/drawerSlice";
 import { IconButton } from "@mui/material";
@@ -7,22 +8,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { Colors } from "../../styles/theme";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function AppbarMobile() {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   return (
-    <AppbarContainer
-      sx={{
-        borderBottom: 1,
-        borderBottomColor: Colors.light_grey,
-        padding: "0rem 2rem 0rem 0rem ",
-      }}>
+    <AppbarContainer>
       <AppbarHeader>
-        {/*  */}
         <IconButton
           onClick={() => dispatch(setDrawerOpen(true))}
-          style={{ backgroundColor: "transparent", padding: "1.6rem" }}
-          size="large"
+          size="small"
           aria-label="open drawer">
           <MenuIcon
             fontSize="large"
@@ -35,18 +31,12 @@ export default function AppbarMobile() {
           />
         </IconButton>
       </AppbarHeader>
-      <Link href="/">
-        <span
-          style={{
-            fontFamily: "",
-            fontSize: "34px",
-            fontWeight: "bold",
-            letterSpacing: "2px",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
-            paddingLeft: "1.6rem",
-          }}>
-          Trade<strong style={{ color: Colors.green }}>Tracker</strong>{" "}
-        </span>
+      <Link
+        href="/"
+        style={{
+          fontSize: "34px",
+        }}>
+        Trade<strong style={{ color: Colors.green }}>Tracker</strong>{" "}
       </Link>
     </AppbarContainer>
   );

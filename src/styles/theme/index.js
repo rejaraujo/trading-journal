@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const DrawerWidth = 300;
+export const DrawerWidth = 450;
 
 export const Colors = {
   primary: "#222",
@@ -35,8 +35,9 @@ const theme = createTheme({
           // height: 600,
           background: Colors.light_grey,
           color: Colors.primary,
-          // borderRadius: "0px 100px 0px 0px",
-          borderRight: `10px solid ${Colors.secondary}`,
+          borderRadius: "0px 24px 24px 0px",
+          borderRight: `10px solid ${Colors.primary}`,
+          padding: "18px",
         },
       },
     },
