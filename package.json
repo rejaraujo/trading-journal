@@ -18,7 +18,7 @@
     "@next/mdx": "^14.0.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/mdx": "^2.0.9",
-    "@vercel/postgres": "^0.7.2",
+    "@vercel/postgres": "^0.10.0",
     "bcryptjs": "^2.4.3",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
